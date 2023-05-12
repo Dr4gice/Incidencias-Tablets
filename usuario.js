@@ -6,13 +6,15 @@ class Usuario {
      * @param {string} nombre Nombre del usuario
      * @param {string} apellidos Apellidos del usuario
      * @param {number} telefono Teléfono del usuario
+     * @param {Usuarios} tipoUsuario Tipo de usuario
      */
-    constructor(nif, email, nombre, apellidos, telefono) {
+    constructor(nif, email, nombre, apellidos, telefono, tipoUsuario) {
         this.nif = nif;
         this.email = email;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
+        this.tipoUsuario = tipoUsuario
     }
 
     /**
@@ -94,31 +96,26 @@ class Usuario {
     setTelefono(telefono) {
         this.telefono = telefono;
     }
-}
 
-/**
- * @todo Crear clase Alumno con sus parámetros, constructor, getters y setters. (Que otra información a parte de la de Usuario tiene un Alumno?)
- */
-class Alumno extends Usuario {
-    constructor() {
+    /**
+     * Getter tipo de usuario
+     * @returns Tipo de usuario
+     */
+    getTipoUsuario() {
+        return this.tipoUsuario;
+    }
 
+    /**
+     * Setter tipo de usuario
+     * @param {tipoUsuario} tipoUsuario Tipo de usuario
+     */
+    setTipoUsuario(tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }
 
-/**
- * @todo Crear clase Profesor con sus parámetros, constructor, getters y setters. (Que otra información a parte de la de Usuario tiene un Profesor?)
- */
-class Profesor extends Usuario {
-    constructor() {
-
-    }
-}
-
-/**
- * @todo Crear clase Director con sus parámetros, constructor, getters y setters. (Que otra información a parte de la de Usuario tiene un Director?)
- */
-class Director extends Usuario {
-    constructor() {
-
-    }
+const Usuarios = {
+    ALUMNO: 0,
+    PROFESOR: 1,
+    DIRECTOR: 2
 }
