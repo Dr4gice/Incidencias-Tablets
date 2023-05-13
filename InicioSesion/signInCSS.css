@@ -8,8 +8,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #080808;
-
   background-image: url("fondo.jpg");
   /*
   background-image: radial-gradient(circle at 50% 50%, #08080800 20%, #08080800), url('fondo.jpg');                     
@@ -46,7 +44,7 @@ label {
 }
 
 input {
-  color: white;
+  color: black;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -56,14 +54,15 @@ input {
 }
 
 input[type="submit"] {
-  transition: background-color 100ms ease;
+  margin-top: 5px;
+  transition: background-color 175ms ease;
   background-color: #080808;
   font-weight: bold;
   color: white;
 }
 
 input[type="submit"]:hover {
-  transition: background-color 250ms ease;
+  transition: background-color 350ms ease;
   background-color: #2c2c2c;
   cursor: pointer;
 }
