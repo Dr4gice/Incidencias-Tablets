@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <title>Crear Cuenta</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="newAccCSS.css">
 </head>
 
@@ -12,13 +13,13 @@
       Crear Cuenta
     </div>
 
-     <!-- 
-        MODIFICAR EL FONDO        
-      -->
-      
-    <div class="box signIn">     
+    <!--  
+        Conseguir que la eleccion del tipo de Cliente sea obligatoria
+    -->
+
+    <div class="box signIn">
       <form>
-        
+
         <input type="text" id="username" name="username" placeholder="DNI:" required>
         <br>
         <input type="email" id="email" name="email" placeholder="Correo:" required>
@@ -28,9 +29,9 @@
         <input type="password" id="ConfPassword" name="ConfPassword" placeholder="Confirmar contraseña:" required>
         <br>
 
-        <label for="clientType" class="clientType">Tipo de Cliente:</label>
+        <label for="userType" class="clientType">Tipo de usuario:</label>
         <select name="clientType" id="clientType" required>
-          <option value="Elige" disabled selected hidden>Elige</option>
+          <option value="Elige" disabled selected hidden>Escoge</option>
           <option value="Alumno">Alumno</option>
           <option value="Profesor">Profesor</option>
           <option value="Director">Director</option>
@@ -38,9 +39,9 @@
         </select>
         <br>
 
-        
+
         <input type="submit" id="sendSingIn" value="Crear Cuenta">
-        
+
       </form>
       <form action="signIn.html">
         <input type="submit" id="createNewAccount" value="¿Ya tienes una cuenta?">

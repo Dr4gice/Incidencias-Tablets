@@ -1,6 +1,6 @@
 * {
-  font-family: Open Sans, arial,sans-serif;
-  color: #fff; 
+  font-family: Open Sans, arial, sans-serif;
+  color: #fff;
 }
 
 body {
@@ -8,29 +8,30 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #111111;
+  background-color: #080808;
+
+  background-image: url("fondo.jpg");
   /*
-    background-image: url("fondo.jpg");
-    background-color: rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(circle at 50% 50%, #08080800 20%, #08080800), url('fondo.jpg');                     
   */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .contains {
   background-color: #d92c2c;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 200px 100px rgb(0, 0, 0);
   padding: 30px;
   text-align: center;
-
 }
-
-
-
 
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 27px;
+  color: #080808;
 }
 
 .signIn {
@@ -44,10 +45,8 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="submit"] {
-  color:  black;
+input {
+  color: white;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -58,7 +57,7 @@ input[type="submit"] {
 
 input[type="submit"] {
   transition: background-color 100ms ease;
-  background-color: #0e0e0e;
+  background-color: #080808;
   font-weight: bold;
   color: white;
 }
@@ -69,14 +68,8 @@ input[type="submit"]:hover {
   cursor: pointer;
 }
 
-#createNewAccount{
-  background-color: #00000000;
+#createNewAccount {
+  background-color: #08080800;
   padding: 0px;
   margin: 0px;
-
 }
-
-
-
-
-
