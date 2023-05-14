@@ -53,7 +53,7 @@ input {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+button {
   margin-top: 20px;
   transition: background-color 200ms ease;
   background-color: #0e0e0e;
@@ -61,7 +61,7 @@ input[type="submit"] {
   color: white;
 }
 
-input[type="submit"]:hover {
+button:hover {
   transition: background-color 350ms ease;
   background-color: #2c2c2c;
   cursor: pointer;

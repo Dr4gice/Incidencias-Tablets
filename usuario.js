@@ -3,18 +3,16 @@ class Usuario {
      * Constructor de la clase Usuario
      * @param {string} nif Nif del usuario
      * @param {string} email Email del usuario
-     * @param {string} nombre Nombre del usuario
-     * @param {string} apellidos Apellidos del usuario
-     * @param {number} telefono Teléfono del usuario
+     * @param {string} contrasenya Contraseña del usuario
+     * @param {string} usuario Nombre del usuario
      * @param {Usuarios} tipoUsuario Tipo de usuario
      */
-    constructor(nif, email, nombre, apellidos, telefono, tipoUsuario) {
+    constructor(nif, email, contrasenya, usuario, tipoUsuario) {
         this.nif = nif;
         this.email = email;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.tipoUsuario = tipoUsuario
+        this.contrasenya = contrasenya;
+        this.usuario = usuario;
+        this.tipoUsuario = tipoUsuario;
     }
 
     /**
@@ -50,51 +48,35 @@ class Usuario {
     }
 
     /**
-     * Getter del nombre
+     * Getter de la contraseña
+     * @returns Contraseña del usuario
+     */
+    getContrasenya() {
+        return this.contrasenya;
+    }
+
+    /**
+     * Setter de la contraseña
+     * @param {string} contrasenya Contraseña del usuario
+     */
+    setContrasenya(contrasenya) {
+        this.contrasenya = contrasenya;
+    }
+
+    /**
+     * Getter del usuario
      * @returns Nombre del usuario
      */
-    getNombre() {
-        return this.nombre;
+    getUsuario() {
+        return this.usuario;
     }
 
     /**
-     * Setter del nombre
-     * @param {string} nombre Nombre del usuario
+     * Setter del usuario
+     * @param {string} usuario Nombre del usuario
      */
-    setNombre(nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Getter de los apellidos
-     * @returns Apellidos del usuario
-     */
-    getApellidos() {
-        return this.apellidos;
-    }
-
-    /**
-     * Setter de los apellidos
-     * @param {string} apellidos Apellidos del usuario
-     */
-    setApellidos(apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    /**
-     * Getter del teléfono
-     * @returns Teléfono del usuario
-     */
-    getTelefono() {
-        return this.telefono;
-    }
-
-    /**
-     * Setter del teléfono
-     * @param {number} telefono Teléfono del usuario
-     */
-    setTelefono(telefono) {
-        this.telefono = telefono;
+    setUsuario(usuario) {
+        this.usuario = usuario;
     }
 
     /**

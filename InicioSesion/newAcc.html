@@ -28,6 +28,9 @@
         <br>
         <input type="password" id="ConfPassword" name="ConfPassword" placeholder="Confirmar contraseña:" required>
         <br>
+        <span id="confirmPasswordError" style="color: rgb(113, 6, 6);"></span>
+        <span id="emptyFieldsError" style="color: rgb(113, 6, 6);"></span>
+        <br>
 
         <label for="userType" class="clientType">Tipo de usuario:</label>
         <select name="clientType" id="clientType" required>
@@ -40,7 +43,7 @@
         <br>
 
 
-        <input type="submit" id="sendSingIn" value="Crear Cuenta">
+        <button type="button" id="sendSingIn">Crear Cuenta</button>
 
       </form>
       <form action="signIn.html">
@@ -48,6 +51,8 @@
       </form>
     </div>
   </div>
+
+  <script src="newAcc.js"></script>
 </body>
 
 </html>
