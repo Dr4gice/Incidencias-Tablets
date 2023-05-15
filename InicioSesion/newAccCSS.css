@@ -73,6 +73,20 @@ button:hover {
   margin-top: 10px;
 }
 
+input[type="submit"] {
+  margin-top: 5px;
+  transition: background-color 175ms ease;
+  background-color: #080808;
+  font-weight: bold;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  transition: background-color 350ms ease;
+  background-color: #2c2c2c;
+  cursor: pointer;
+}
+
 
 select {
   transition: background-color 200ms ease;
