@@ -1,6 +1,6 @@
 * {
   font-family: Open Sans, arial, sans-serif;
-  color: #fff;
+  color: black;
 }
 
 body {
@@ -9,16 +9,13 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url("fondo.jpg");
-  /*
-  background-image: radial-gradient(circle at 50% 50%, #08080800 20%, #08080800), url('fondo.jpg');                     
-  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .contains {
-  background-color: #d92c2c;
+  background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0px 0px 250px 120px rgb(0, 0, 0);
   padding: 30px;
@@ -38,41 +35,67 @@ body {
   align-items: center;
 }
 
-label {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
 input {
   color: black;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
   width: 100%;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-button {
-  margin-top: 20px;
+/* Tipo de usuario */
+select {
   transition: background-color 200ms ease;
   background-color: #0e0e0e;
-  font-weight: bold;
+  border-radius: 5px;
+  padding-left: 7px;
+  margin-top: 7px;
   color: white;
 }
 
-button:hover {
+select:hover {
   transition: background-color 350ms ease;
   background-color: #2c2c2c;
   cursor: pointer;
 }
 
-#createNewAccount {
-  background-color: #52525200;
-  padding: 0px;
-  margin-top: 10px;
+option {
+  color:white;
 }
 
+/* Crear cuenta */
+#sendSignIn {
+  transition: background-color 200ms ease;
+  background-color: #0e0e0e;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin-top: 17px;
+  border: 0px solid transparent;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+#sendSignIn:hover {
+  transition: background-color 350ms ease;
+  background-color: #2c2c2c;
+  cursor: pointer;
+}
+
+#logIn {
+  background-color: transparent;
+  padding: 0px;
+  margin: 0;
+  margin-top: 20px;
+  color: black;
+  border: none;
+}
+
+
+/* Ya tienes una cuenta */
 input[type="submit"] {
   margin-top: 5px;
   transition: background-color 175ms ease;
@@ -82,22 +105,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  transition: background-color 350ms ease;
-  background-color: #2c2c2c;
-  cursor: pointer;
-}
-
-
-select {
-  transition: background-color 200ms ease;
-  background-color: #0e0e0e;
-  border-radius: 5px;
-  padding-left: 7px;
-  margin-top: 7px;
-}
-
-select:hover {
-  transition: background-color 350ms ease;
-  background-color: #2c2c2c;
   cursor: pointer;
 }

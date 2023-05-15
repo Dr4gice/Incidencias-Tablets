@@ -1,6 +1,6 @@
 * {
   font-family: Open Sans, arial, sans-serif;
-  color: #fff;
+  color: black;
 }
 
 body {
@@ -9,18 +9,15 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url("fondo.jpg");
-  /*
-  background-image: radial-gradient(circle at 50% 50%, #08080800 20%, #08080800), url('fondo.jpg');                     
-  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .contains {
-  background-color: #d92c2c;
+  background-color: #f7f7f7;
   border-radius: 10px;
-  box-shadow: 0px 0px 200px 100px rgb(0, 0, 0);
+  box-shadow: 0px 0px 250px 120px rgb(0, 0, 0);
   padding: 30px;
   text-align: center;
 }
@@ -28,7 +25,7 @@ body {
 .title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 27px;
+  margin-bottom: 20px;
   color: #080808;
 }
 
@@ -38,51 +35,42 @@ body {
   align-items: center;
 }
 
-label {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
 input {
-  color: black;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-button {
-  margin-top: 5px;
-  transition: background-color 175ms ease;
-  background-color: #080808;
+/* Iniciar Sesion */
+#sendSignIn {
+  transition: background-color 200ms ease;
+  background-color: #0e0e0e;
   font-weight: bold;
   color: white;
+  height: 100%;
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-button:hover {
+#sendSignIn:hover {
   transition: background-color 350ms ease;
   background-color: #2c2c2c;
   cursor: pointer;
 }
 
-input[type="submit"] {
-  margin-top: 5px;
-  transition: background-color 175ms ease;
-  background-color: #080808;
-  font-weight: bold;
-  color: white;
-}
-
-input[type="submit"]:hover {
-  transition: background-color 350ms ease;
-  background-color: #2c2c2c;
-  cursor: pointer;
-}
-
+/* No tienes cuenta */
 #createNewAccount {
-  background-color: #08080800;
+  background-color: transparent;
   padding: 0px;
-  margin: 0px;
+  margin: 0;
+  margin-top: 20px;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
