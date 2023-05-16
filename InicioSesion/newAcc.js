@@ -8,6 +8,7 @@ const errorEmail = document.getElementById("emailError");
 const errorConfirmarContrasenya = document.getElementById("confirmPasswordError");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
 
+const principalArchivo = "../index.html";
 contrasenya.addEventListener("input", comprobarContrasenya);
 confirmarContrasenya.addEventListener("input", comprobarContrasenya);
 
@@ -24,7 +25,7 @@ botonRegistro.addEventListener('click', async function () {
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
         agregarUsuario(usuario.value, email.value, contrasenyaEncriptada, tipoCliente.value);
 
-        location.href = '../paginaPrincipal/proyecto.html';
+        location.href = principalArchivo;
         errorCamposVacios.textContent = "";
     }
 });

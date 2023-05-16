@@ -3,8 +3,7 @@ const contrasenya = document.getElementById("LogPasswd");
 const botonLogin = document.getElementById("sendSignIn");
 const errorContrasenyaIncorrecta = document.getElementById("wrongPasswordError");
 
-const carpetaPaginaPrincipal = "../docs/";
-const principalArchivo = "proyecto.html";
+const principalArchivo = "../index.html";
 const msgContrasenyaIncorrecta = "DNI o Contraseña incorrectos";
 
 // Comprobaciones para el Inicio de Sesión del usuario
@@ -16,7 +15,7 @@ botonLogin.addEventListener("click", async function () {
         errorContrasenyaIncorrecta.textContent = msgContrasenyaIncorrecta;
     } else { // Comprueba que la Contraseña coincida con alguna que esté guardada
         if (await comprobarContrasenyaBD(await encriptar(contrasenya.value))) {
-            location.href = carpetaPaginaPrincipal + principalArchivo;
+            location.href = principalArchivo;
         } else {
             contrasenya.value = "";
             errorContrasenyaIncorrecta.textContent = msgContrasenyaIncorrecta;

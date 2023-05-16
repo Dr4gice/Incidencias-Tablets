@@ -4,7 +4,7 @@ document.querySelector('.boton').addEventListener('click', function () {
     nav.classList.toggle('active');
 });
 
-const carpetaLogin = "../InicioSesion/";
+const carpetaLogin = "InicioSesion/";
 const registroArchivo = "newAcc.html";
 const loginArchivo = "signIn.html";
 
