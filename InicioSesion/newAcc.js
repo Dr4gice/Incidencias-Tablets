@@ -15,11 +15,11 @@ confirmarContrasenya.addEventListener("input", comprobarContrasenya);
 // Comprueba si los campos están vacíos. Si están vacíos muestra mensaje de error, en caso contrario se registra el usuario
 botonRegistro.addEventListener('click', async function () {
     if (usuario.value === "" || email.value === "" || contrasenya.value === "" || confirmarContrasenya.value === "" || tipoCliente.value === "Elige") {
-        errorCamposVacios.textContent = "Completa todos los campos requeridos";
+        errorCamposVacios.textContent = "Completa todos los campos";
     } else {
         if (!comprobarEmail(email.value)) {
             email.value = "";
-            errorEmail.textContent = "Formato Email incorrecto"
+            errorCamposVacios.textContent = "Formato Email incorrecto"
             return;
         }
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
@@ -37,11 +37,11 @@ function comprobarContrasenya() {
     if (contrasenya.value === confirmarContrasenya.value) {
         // Habilitar el botón de registro si las contraseñas coinciden
         botonRegistro.removeAttribute("disabled");
-        errorConfirmarContrasenya.textContent = "";
+        errorCamposVacios.textContent = "";
     } else {
         // Deshabilitar el botón de registro si las contraseñas no coinciden
         botonRegistro.setAttribute("disabled", true);
-        errorConfirmarContrasenya.textContent = "Las contraseñas no coinciden";
+        errorCamposVacios.textContent = "Contraseñas no coinciden";
     }
 }
 

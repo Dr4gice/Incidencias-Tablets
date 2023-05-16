@@ -4,31 +4,26 @@
 <head>
   <title>Crear Cuenta</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="newAccCSS.css">
+  <link rel="stylesheet" type="text/css" href="newAcc.css">
 </head>
 
 <body>
-  <div class="contains">
-    <div class="box title">
+  <div class="container">
+    <div class="title">
       Crear Cuenta
     </div>
 
-    <!--  
-        Conseguir que la eleccion del tipo de Cliente sea obligatoria
-    -->
-
-    <div class="box signIn">
+    <div class="signInBox">
       <form>
 
         <input type="text" id="username" name="username" placeholder="DNI:" required>
         <br>
         <input type="email" id="email" name="email" placeholder="Correo:" required>
-        <span id="emailError" style="color: rgb(113, 6, 6);"></span>
         <br>
         <input type="password" id="password" name="password" placeholder="Contraseña:" required>
         <br>
         <input type="password" id="ConfPassword" name="ConfPassword" placeholder="Confirmar contraseña:" required>
-        <span id="confirmPasswordError" style="color: rgb(113, 6, 6);"></span>
+        <br>
         <span id="emptyFieldsError" style="color: rgb(113, 6, 6);"></span>
         <br>
 
@@ -45,10 +40,9 @@
         <button type="button" id="sendSignIn">Crear Cuenta</button>
 
       </form>
-      <form action="signIn.html">
-        <input type="submit" id="logIn" value="¿Ya tienes una cuenta?">
-      </form>
-    </div>
+      <a id="goLogIn" href="signIn.html">¿Ya tienes una cuenta?</a>
+      <a id="goFrontPage" href="../index.html">Volver Menú principal</a>
+    </div>   
   </div>
 
   <script src="../usuario.js"></script>
