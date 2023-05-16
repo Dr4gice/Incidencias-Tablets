@@ -3,7 +3,7 @@ const contrasenya = document.getElementById("LogPasswd");
 const botonLogin = document.getElementById("sendSignIn");
 const errorContrasenyaIncorrecta = document.getElementById("wrongPasswordError");
 
-const carpetaPaginaPrincipal = "../paginaPrincipal/";
+const carpetaPaginaPrincipal = "../docs/";
 const principalArchivo = "proyecto.html";
 const msgContrasenyaIncorrecta = "DNI o Contraseña incorrectos";
 
