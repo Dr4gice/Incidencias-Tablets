@@ -56,7 +56,6 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
     let usuarioDatos = [];
 
     try {
-        let usuarioDatos = [];
         let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
         usuarioDatos = listaRecuperada;
     } catch (error) {
@@ -64,12 +63,18 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
     }
 
     const nombreUsuario = generarNombre();
+    const idTablet = generarId();
+    const marcaTablet = generarMarca();
     const usuarioJson = {
         nif: nif,
         email: email,
         contrasenya: contrasenya,
         usuario: nombreUsuario,
-        tipoCliente: tipoCliente
+        tipoCliente: tipoCliente,
+        tablet: {
+            id: idTablet,
+            marca: marcaTablet
+        }
     }
 
     usuarioDatos.push(usuarioJson);
@@ -83,11 +88,39 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
  */
 function generarNombre() {
     const nombresUsuario = ["crazy", "lazy", "happy", "sunny", "cool", "funny", "mystery", "panda", "dragon", "tiger", "lion", "eagle", "phoenix", "wolf", "fox", "hawk", "unicorn", "wizard", "ghost"];
-    const nombreAleatorio = nombresUsuario[Math.floor(Math.random() * nombresUsuario.length)];
-    const numeroAleatorio = Math.floor(Math.random() * 10000);
-    const nombreUsuario = nombreAleatorio + numeroAleatorio.toString();
+    let nombreAleatorio = nombresUsuario[Math.floor(Math.random() * nombresUsuario.length)];
+    for (let i = 0; i < 4; i++) {
+        const numeroAleatorio = Math.floor(Math.random() * 10)
+        nombreAleatorio += numeroAleatorio;
+    }
 
-    return nombreUsuario;
+    return nombreAleatorio;
+}
+
+/**
+ * Genera un id de tablet aleatorio
+ * @returns {string} Id de la tablet
+ */
+function generarId() {
+    let id = "";
+
+    for (let i = 0; i < 8; i++) {
+        const numeroAleatorio = Math.floor(Math.random() * 10);
+        id += numeroAleatorio;
+    }
+
+    return id;
+}
+
+/**
+ * Genera una marca alatoria
+ * @returns {string} Marca de la tablet
+ */
+function generarMarca() {
+    const nombresMarcas = ["Samsung", "Toshiba"];
+    const marcaAleatoria = nombresMarcas[Math.floor(Math.random() * nombresMarcas.length)];
+
+    return marcaAleatoria;
 }
 
 /**
@@ -97,6 +130,7 @@ function generarNombre() {
  */
 function comprobarEmail(email) {
     const validar = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     return validar.test(email);
 }
 
