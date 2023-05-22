@@ -1,0 +1,282 @@
+:root{
+    --color1:rgb(219,144,5);
+    --color2: rgb(54, 202, 54);
+    --color3: rgb(13, 110, 221);
+    --fondo:black;
+    --titulos: 33px;
+    --subtitulos: 18px;
+    --margenes: 60px;
+    --espacios: 10px;
+    --espacios-contenido:45;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'open sans';
+    background-color: var(--fondo);
+}
+img{
+    vertical-align: top;
+}
+
+
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: fixed;
+    left: 8px;
+    width: 16px;
+    background: #cef;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+  header{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom,
+    rgba(211,135,20, .664),
+    rgba(29,241,171, .6),
+    rgba(7,109,150, .45)
+    ), url(vialactea.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover ;
+  }
+  nav{
+    width: 100%;
+    position: fixed;
+    height: 80px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 20);
+    margin-top: -100px;
+  }
+  .nav1{
+    background:black;
+    height: 90px;
+    color: white;
+  }
+  
+  .contenedor-nav{
+    display: flex;
+    margin: auto;
+    width: 90px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    overflow: hidden;
+  }
+
+nav .enlaces a{
+    margin-left: 100px;
+    display: inline-block;
+    padding: 25px 10px;
+    margin-right: -10px;
+    font-size: 17px;
+    font-weight: 100;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+}
+
+
+
+
+
+.contenedor{
+  margin: auto;
+  padding: var(--margenes) 0;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contenedor h3{
+  font-size: 45px;
+  color: var(--color1);
+  margin-bottom: var(--espacios);
+}
+.contenedor p{
+  font-size: var(--subtitulos);
+  font-weight: 300;
+  color:white;
+}
+
+.after::after{
+  content: '';
+  display: block;
+  margin: auto;
+  margin-top: var(--espacios);
+  width: 100px;
+  height: 2px;
+  background: var(--color1);
+  margin-bottom: var(--espacios-contenido);
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.content-card{
+  width: 31%;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  height: 400px;
+  overflow: hidden;
+}
+
+.people{
+  height: 80%;
+ 
+}
+
+.content-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-team{
+  height: 20%;
+  width: 100%;
+  padding: var(--espacios) 0;
+}
+.textos>h1{
+  font-size: 80px;
+}
+.textos>h2{
+  font-size: 30px;
+  font-weight: 300;
+}
+
+
+footer{
+  background: black;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 400px;
+}
+
+
+.marca-logo{
+  background-repeat: no-repeat;
+  width: 30%;
+  margin-left: 500px;
+  margin-right: -270px;
+  margin-left: 700px;
+  margin-bottom: 00px;
+}
+.marca-logo img{
+  border-radius: 30px;
+  margin-top: -100px;
+  width: 70%;
+}
+
+.iconos{
+
+  margin-bottom: 700px;
+  justify-content: space-around;
+  font-size: 100px;
+  width: 90px;
+  padding: 60px;
+  
+}
+.fab{
+  font-size: 60px;
+  color: white;
+  margin-bottom: var(--espacios);
+  display: inline-block;
+}
+
+footer p{ 
+
+  font-size: 40px;
+  margin-top:var(--espacios) ;
+}
+footer h2{   
+  
+  text-align: left;
+
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Estilos específicos de las columnas */
+.col-md-4 {
+  width: 33.33%;
+  float: left;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-media {
+  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+footer p.copyright {
+  font-size: 12px;
+  margin-top: 30px;
+  text-align: center;
+}
+
