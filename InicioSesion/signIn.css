@@ -73,4 +73,12 @@ a {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
+  transition: 80ms ease;
+}
+
+a:hover{
+  color: #464646;
+  text-shadow: 0px 0px 30px black;
+  transition: 250ms ease;
+  cursor: pointer;
 }
