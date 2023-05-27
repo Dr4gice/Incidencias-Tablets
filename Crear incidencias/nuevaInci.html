@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nuevaInci.css">
+    <title>Crear Incidencias</title>
+    
+</head>
+
+<body>
+    
+    <div class="header">
+        <button class="boton">
+            <div class="linea"></div>
+            <div class="linea"></div>
+            <div class="linea"></div>
+        </button>
+        <div class="logo">
+            <div class="icon"></div>
+            <p>Tu icono</p>
+
+            
+        </div>
+        <nav class="menu-superior">
+            <ul>
+                <li><a id="goLogIn" href="../Incidencias-Tablets/InicioSesion/signIn.html">Iniciar Sesion</a>
+                <li><a id="goSignIn" href="../Incidencias-Tablets/InicioSesion/newAcc.html">Crear Cuenta</a>
+                <li><a>FAQ</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </nav>
+        <nav class="menu-lateral">
+            <ul>
+                <li><a href="./nuevaInci.html">Crear indicidencias</a></li>
+                <li><a>Consultar estado incidencias</a></li>
+                <li><a>Administrar incidencias</a></li>
+                <li><a>blablabla</a></li>
+                <li><a>blebleble</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+    
+    <div id="main">
+        <div class="cont">
+            <div class="title">
+                Crear incidencia
+            </div>
+
+            <div class="newInci">
+                <form action="">
+                    <label for="nifAlumno" class="NIFalumno">NIF del alumno</label>
+                    <input type="text" name="NIFalumno" id="NIFalumno" placeholder="NIF del alumno" required>
+
+                    <label for="idTablet" class="idTablet">ID de la tablet</label>
+                    <input type="text" name="idTablet" id="idTablet" placeholder="ID de la tablet" required>
+
+                    <label for="tipoMarca" class="marca">Marca de la tablet</label>
+                    <input type="text" name="marca" id="marca" placeholder="Marca de la tablet" required>
+
+                    <label for="tipoInci" class="tipoInci">Tipo de incidencia:</label>
+                    <select name="Incidencia" id="tipoInci" onchange="mostrarCampoAdicional()">
+                        <option value="Elige" disabled selected hidden>Selecciona el problema</option>
+                        <option value="Rendimiento">Problemas de rendimiento</option>
+                        <option value="Carga">Problemas de carga del dispositivo</option>
+                        <option value="Pantalla">Problemas en la pantalla del dispositivo</option>
+                        <option value="Software">Fallos en el software del sistema</option>
+                        <option value="Internet">Problemas con la conexion a Internet</option>
+                        <option value="Reinicio">El dispositivo se reinicia solo</option>
+                        <option value="Almacenamiento">Problemas de almacenamiento del dispositivo</option>
+                        <option value="Otro">Otros problemas...</option>
+                    </select>
+
+                    <br>
+                    <br>
+
+                    <div id="otrosProblemas">
+                        <label for="OtrosProb" class="OtrosProb">Otros problemas</label>
+                        <input type="text" name="otrosProblemas" id="OtrosProb"
+                            placeholder="Escribe aquí el problema..." required>
+                    </div>
+
+                    <p>Descripción del problema</p>
+                    <textarea name="Problema" id="problema" cols="30" rows="10"
+                        placeholder="Describe aquí el problema..." required></textarea>
+                </form>
+            </div>
+
+            <button type="button" id="nuevaIncidencia">Crear Incidencia</button>
+        </div>
+    </div>
+
+    <script src="pagInicio.js"></script>
+    <script src="nuevaInci.js"></script>
+</body>
+
+</html>
