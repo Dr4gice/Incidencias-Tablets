@@ -17,11 +17,18 @@ botonRegistro.addEventListener('click', async function () {
     if (usuario.value === "" || email.value === "" || contrasenya.value === "" || confirmarContrasenya.value === "" || tipoCliente.value === "Elige") {
         errorCamposVacios.textContent = "Completa todos los campos";
     } else {
+        if (!comprobarDNI(usuario.value)) {
+            usuario.value = "";
+            errorCamposVacios.textContent = "Formato DNI incorrecto"
+            return;
+        }
+        
         if (!comprobarEmail(email.value)) {
             email.value = "";
             errorCamposVacios.textContent = "Formato Email incorrecto"
             return;
         }
+               
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
         agregarUsuario(usuario.value, email.value, contrasenyaEncriptada, tipoCliente.value);
 
@@ -29,6 +36,14 @@ botonRegistro.addEventListener('click', async function () {
         errorCamposVacios.textContent = "";
     }
 });
+
+// Comprueba si el DNI está hecho de forma válida.
+
+function comprobarDNI() {
+    const expresion = /[0-9]{8}[a-zA-Z]{1}/;
+    return expresion.test(usuario.value);
+}
+
 
 /**
  * Comprueba si el campo Contraseña coincide con el campo Confirmar Contraseña
@@ -130,7 +145,7 @@ function generarMarca() {
  */
 function comprobarEmail(email) {
     const validar = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     return validar.test(email);
 }
 
