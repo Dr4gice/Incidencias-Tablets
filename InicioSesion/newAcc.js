@@ -17,7 +17,7 @@ botonRegistro.addEventListener('click', async function () {
     if (usuario.value === "" || email.value === "" || contrasenya.value === "" || confirmarContrasenya.value === "" || tipoCliente.value === "Elige") {
         errorCamposVacios.textContent = "Completa todos los campos";
     } else {
-        if (!comprobarDNI(usuario.value)) {
+        if (!comprobarDNI(usuario.value.toUpperCase())) {
             usuario.value = "";
             errorCamposVacios.textContent = "Formato DNI incorrecto"
             return;
@@ -44,7 +44,6 @@ botonRegistro.addEventListener('click', async function () {
  */
 function comprobarDNI(dni) {
     const expresion = /[0-9]{8}[A-Z]{1}/;
-    let dni = usuario.value.toUpperCase();
     if (expresion.test(dni)) {
         return comprobarDNIletra(dni);
     } else {
@@ -60,7 +59,7 @@ function comprobarDNI(dni) {
 function comprobarDNIletra(dni) {
     const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
     let dniSinLetra = dni.substring(0,8);
-    let letraDelDni = dni.charAt(9);
+    let letraDelDni = dni.charAt(8);
     let numero = dniSinLetra % 23;
     let letraTeorica = letras.charAt(numero);
     return letraDelDni == letraTeorica;  
