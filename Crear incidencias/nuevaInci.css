@@ -9,8 +9,6 @@ body {
     box-sizing: border-box;
 }
 
-
-
 .container {
     background-color:rgb(212, 212, 212 );
     border-bottom: 3px solid rgb(0, 0, 0);
@@ -171,8 +169,7 @@ p {
 }
 
 .NIFalumno,
-.idTablet,
-.marca, .OtrosProb{
+.OtrosProb{
     float: left;
 }
 
