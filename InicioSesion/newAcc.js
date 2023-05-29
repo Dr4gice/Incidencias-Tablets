@@ -37,9 +37,12 @@ botonRegistro.addEventListener('click', async function () {
     }
 });
 
-// Comprueba si el DNI está hecho de forma válida.
-
-function comprobarDNI() {
+/**
+ * Comprueba si el DNI está hecho de forma válida.
+ * @param {string} dni DNI del usuario
+ * @returns {boolean}
+ */
+function comprobarDNI(dni) {
     const expresion = /[0-9]{8}[A-Z]{1}/;
     let dni = usuario.value.toUpperCase();
     if (expresion.test(dni)) {
@@ -49,6 +52,11 @@ function comprobarDNI() {
     }
 }
 
+/**
+ * Comprueba que la letra del DNI sea correcta
+ * @param {string} dni DNI del usuario
+ * @returns {boolean}
+ */
 function comprobarDNIletra(dni) {
     const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
     let dniSinLetra = dni.substring(0,8);
@@ -161,8 +169,4 @@ function comprobarEmail(email) {
     const validar = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return validar.test(email);
-}
-
-function comprobarNif(nif) {
-    return false;
 }

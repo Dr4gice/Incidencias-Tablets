@@ -23,6 +23,11 @@ botonLogin.addEventListener("click", async function () {
     }
 });
 
+/**
+ * Comprueba que el DNI exista en la Base de Datos
+ * @param {string} nif DNI del usuario
+ * @returns {boolean}
+ */
 function comprobarNifBD(nif) {
     try {
         let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
@@ -40,6 +45,11 @@ function comprobarNifBD(nif) {
     }
 }
 
+/**
+ * Comprueba que la contraseña exista en la Base de Datos
+ * @param {string} contrasenya Contraseña del usuario
+ * @returns {boolean}
+ */
 function comprobarContrasenyaBD(contrasenya) {
     try {
         let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
