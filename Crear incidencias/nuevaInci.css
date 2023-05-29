@@ -41,7 +41,7 @@ body {
 .icon{
     width: 30px;
     height: 30px;
-    background-image: url("./iconoBeicon.jpg");
+    background-image: url("/Imagenes/iconoBeicon.jpg");
     background-size: cover;
     border-radius: 50%;
     margin-right:8px ;
@@ -123,7 +123,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("./fondo.jpg");
+    background-image: url("/Imagenes/fondo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

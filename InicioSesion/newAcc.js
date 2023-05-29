@@ -22,13 +22,13 @@ botonRegistro.addEventListener('click', async function () {
             errorCamposVacios.textContent = "Formato DNI incorrecto"
             return;
         }
-        
+
         if (!comprobarEmail(email.value)) {
             email.value = "";
             errorCamposVacios.textContent = "Formato Email incorrecto"
             return;
         }
-               
+
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
         agregarUsuario(usuario.value, email.value, contrasenyaEncriptada, tipoCliente.value);
 
@@ -40,8 +40,22 @@ botonRegistro.addEventListener('click', async function () {
 // Comprueba si el DNI está hecho de forma válida.
 
 function comprobarDNI() {
-    const expresion = /[0-9]{8}[a-zA-Z]{1}/;
-    return expresion.test(usuario.value);
+    const expresion = /[0-9]{8}[A-Z]{1}/;
+    let dni = usuario.value.toUpperCase();
+    if (expresion.test(dni)) {
+        return comprobarDNIletra(dni);
+    } else {
+        return false;
+    }
+}
+
+function comprobarDNIletra(dni) {
+    const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let dniSinLetra = dni.substring(0,8);
+    let letraDelDni = dni.charAt(9);
+    let numero = dniSinLetra % 23;
+    let letraTeorica = letras.charAt(numero);
+    return letraDelDni == letraTeorica;  
 }
 
 

@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('./fondo-web.png');
+    background-image: url('/Imagenes/fondo-web.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -44,7 +44,7 @@ body {
 .icon{
     width: 30px;
     height: 30px;
-    background-image: url(./iconoBeicon.jpg);
+    background-image: url(/Imagenes/iconoBeicon.jpg);
     background-size: cover;
     border-radius: 50%;
     margin-right:8px ;
