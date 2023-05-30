@@ -1,6 +1,6 @@
 const nav = document.querySelector('.menu-lateral');
-const botonRegistro = document.querySelector('.boton-registro');
-const botonLogin = document.querySelector('.boton-login');
+const botonRegistro = document.getElementById('goSignIn');
+const botonLogin = document.getElementById('goLogIn');
 
 const carpetaLogin = "InicioSesion/";
 const registroArchivo = "newAcc.html";

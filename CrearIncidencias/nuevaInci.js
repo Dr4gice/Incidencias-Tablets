@@ -6,8 +6,8 @@ const tipoIncidencia = document.getElementById("tipoInci");
 const problema = document.getElementById("problema");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
 const nav = document.querySelector('.menu-lateral');
-const botonRegistro = document.querySelector('.boton-registro');
-const botonLogin = document.querySelector('.boton-login');
+const botonRegistro = document.getElementById('goSignIn');
+const botonLogin = document.getElementById('goLogIn');
 
 const principalArchivo = "adminInci.html";
 const carpetaLogin = "InicioSesion/";
@@ -32,6 +32,9 @@ botonLogin.addEventListener('click', function () {
 botonIncidencia.addEventListener("click", function () {
     if (usuario.value === "" || tipoIncidencia.value === "" || problema.value === "") {
         errorCamposVacios.textContent = "Completa todos los campos";
+        let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+        incidenciaDatos = listaRecuperada;
+        console.log(incidenciaDatos);
     } else {
         // Comprobar formato DNI
 
@@ -40,12 +43,12 @@ botonIncidencia.addEventListener("click", function () {
             errorCamposVacios.textContent = "DNI incorrecto / No existe"
             return;
         }
+
+        agregarIncidencia(usuario.value);
+
+        location.href = principalArchivo;
+        errorCamposVacios.textContent = "";
     }
-
-    agregarIncidencia(usuario.value);
-
-    location.href = principalArchivo;
-    errorCamposVacios.textContent = "";
 })
 
 /**
@@ -68,9 +71,22 @@ function agregarIncidencia(nif) {
 
     try {
         let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        usuarioDatos = listaRecuperada;
+        if (listaRecuperada !== null) {
+            usuarioDatos = listaRecuperada;
+        }
     } catch (error) {
         let usuarioDatos = [];
+    }
+
+    let incidenciaDatos = [];
+
+    try {
+        let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+        if (listaRecuperada !== null) {
+            incidenciaDatos = listaRecuperada;
+        }
+    } catch (error) {
+        let incidenciaDatos = [];
     }
 
     usuarioEncontrado = usuarioDatos.find(usuario => usuario.nif === nif);
@@ -85,32 +101,8 @@ function agregarIncidencia(nif) {
         }
     }
 
-    let incidenciaDatos = [];
-
     incidenciaDatos.push(incidenciaJson);
     localStorage.setItem("listaIncidencias", JSON.stringify(incidenciaDatos));
-}
-
-/**
- * Comprueba que el DNI exista en la Base de Datos
- * @param {string} nif DNI del usuario
- * @returns {boolean}
- */
-function comprobarNifBD(nif) {
-    try {
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        let encontrado = false;
-
-        listaRecuperada.forEach(usuario => {
-            if (usuario.nif === nif) {
-                encontrado = true;
-            }
-        });
-    
-        return encontrado;
-    } catch (error) {
-        return false;
-    }
 }
 
 /**
@@ -118,12 +110,19 @@ function comprobarNifBD(nif) {
  * @returns {string} Id de la tablet
  */
 function generarId() {
-    let id = "";
+    let incidenciaDatos = [];
 
-    for (let i = 0; i < 7; i++) {
-        const numeroAleatorio = Math.floor(Math.random() * 10);
-        id += numeroAleatorio;
+    try {
+        let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+        if (listaRecuperada !== null) {
+            incidenciaDatos = listaRecuperada;
+        }
+    } catch (error) {
+        let incidenciaDatos = [];
     }
+
+    const idNumerico = parseInt(incidenciaDatos.length + 1);
+    let id = "" + idNumerico;
 
     return id;
 }

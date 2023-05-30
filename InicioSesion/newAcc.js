@@ -19,13 +19,19 @@ botonRegistro.addEventListener('click', async function () {
     } else {
         if (!comprobarDNI(usuario.value.toUpperCase())) {
             usuario.value = "";
-            errorCamposVacios.textContent = "Formato DNI incorrecto"
+            errorCamposVacios.textContent = "Formato DNI incorrecto";
+            return;
+        }
+
+        if (comprobarNifBD(usuario.value)) {
+            usuario.value = "";
+            errorCamposVacios.textContent = "Usuario ya existente";
             return;
         }
 
         if (!comprobarEmail(email.value)) {
             email.value = "";
-            errorCamposVacios.textContent = "Formato Email incorrecto"
+            errorCamposVacios.textContent = "Formato Email incorrecto";
             return;
         }
 
@@ -36,34 +42,6 @@ botonRegistro.addEventListener('click', async function () {
         errorCamposVacios.textContent = "";
     }
 });
-
-/**
- * Comprueba si el DNI está hecho de forma válida.
- * @param {string} dni DNI del usuario
- * @returns {boolean}
- */
-function comprobarDNI(dni) {
-    const expresion = /[0-9]{8}[A-Z]{1}/;
-    if (expresion.test(dni)) {
-        return comprobarDNIletra(dni);
-    } else {
-        return false;
-    }
-}
-
-/**
- * Comprueba que la letra del DNI sea correcta
- * @param {string} dni DNI del usuario
- * @returns {boolean}
- */
-function comprobarDNIletra(dni) {
-    const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-    let dniSinLetra = dni.substring(0,8);
-    let letraDelDni = dni.charAt(8);
-    let numero = dniSinLetra % 23;
-    let letraTeorica = letras.charAt(numero);
-    return letraDelDni == letraTeorica;  
-}
 
 
 /**
@@ -93,7 +71,9 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
 
     try {
         let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        usuarioDatos = listaRecuperada;
+        if (listaRecuperada !== null) {
+            usuarioDatos = listaRecuperada;
+        }
     } catch (error) {
         let usuarioDatos = [];
     }
@@ -109,7 +89,12 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
         tipoCliente: tipoCliente,
         tablet: {
             id: idTablet,
-            marca: marcaTablet
+            marca: marcaTablet,
+            accesorios: {
+                cargador: randomBoolean(),
+                funda: randomBoolean(),
+                protectorDePantalla: randomBoolean()
+            }
         }
     }
 
@@ -138,12 +123,18 @@ function generarNombre() {
  * @returns {string} Id de la tablet
  */
 function generarId() {
-    let id = "";
+    let usuarioDatos = [];
 
-    for (let i = 0; i < 8; i++) {
-        const numeroAleatorio = Math.floor(Math.random() * 10);
-        id += numeroAleatorio;
+    try {
+        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
+        if (listaRecuperada !== null) {
+            usuarioDatos = listaRecuperada;
+        }
+    } catch (error) {
+        let usuarioDatos = [];
     }
+
+    let id = "" + usuarioDatos ? usuarioDatos.length: 0;
 
     return id;
 }
@@ -157,15 +148,4 @@ function generarMarca() {
     const marcaAleatoria = nombresMarcas[Math.floor(Math.random() * nombresMarcas.length)];
 
     return marcaAleatoria;
-}
-
-/**
- * Comprueba que el formato del email sea correcto
- * @param {string} email Email del usuario
- * @returns {boolean} True si es correcto, false en caso contrario
- */
-function comprobarEmail(email) {
-    const validar = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    return validar.test(email);
 }

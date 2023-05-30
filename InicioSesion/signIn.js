@@ -10,11 +10,14 @@ const msgContrasenyaIncorrecta = "DNI o Contraseña incorrectos";
 botonLogin.addEventListener("click", async function () {
     if (nif.value === "" || contrasenya.value === "") { // Comprueba que los campos no estén vacíos
         errorContrasenyaIncorrecta.textContent = "Completa todos los campos";
+        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
+        usuarioDatos = listaRecuperada;
+        console.log(usuarioDatos);
     } else if (!(await comprobarNifBD(nif.value))) { // Comprueba que el NIF coincida con alguno que esté guardado
         contrasenya.value = "";
         errorContrasenyaIncorrecta.textContent = msgContrasenyaIncorrecta;
     } else { // Comprueba que la Contraseña coincida con alguna que esté guardada
-        if (await comprobarContrasenyaBD(await encriptar(contrasenya.value))) {
+        if (await comprobarContrasenyaBD(nif.value, await encriptar(contrasenya.value))) {
             location.href = principalArchivo;
         } else {
             contrasenya.value = "";
@@ -22,47 +25,3 @@ botonLogin.addEventListener("click", async function () {
         }
     }
 });
-
-/**
- * Comprueba que el DNI exista en la Base de Datos
- * @param {string} nif DNI del usuario
- * @returns {boolean}
- */
-function comprobarNifBD(nif) {
-    try {
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        let encontrado = false;
-
-        listaRecuperada.forEach(usuario => {
-            if (usuario.nif === nif) {
-                encontrado = true;
-            }
-        });
-    
-        return encontrado;
-    } catch (error) {
-        return false;
-    }
-}
-
-/**
- * Comprueba que la contraseña exista en la Base de Datos
- * @param {string} contrasenya Contraseña del usuario
- * @returns {boolean}
- */
-function comprobarContrasenyaBD(contrasenya) {
-    try {
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        let encontrado = false;
-
-        listaRecuperada.forEach(usuario => {
-            if (usuario.contrasenya === contrasenya) {
-                encontrado = true;
-            }
-        });
-    
-        return encontrado;
-    } catch (error) {
-        return false;
-    }
-}
