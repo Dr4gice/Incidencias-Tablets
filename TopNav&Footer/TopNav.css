@@ -13,8 +13,8 @@ body {
 }
 
 .container {
-    background-color: rgb(212, 212, 212);
-    border-bottom: 3px solid rgb(0, 0, 0);
+    background-color: rgb(236, 236, 236);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .header {
@@ -30,15 +30,21 @@ body {
 
 .boton .linea {
     height: 2px;
-    width: 20px;
-    background-color: rgb(10, 10, 67);
-    margin: 4px 0;
+    width: 25px;
+    background-color: rgb(0, 0, 0);
+    margin: 5px 0;
+    transition: 250ms ease;
+}
+
+.boton:hover .linea {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 10px rgb(255, 0, 0);
+    transition: 250ms ease;    
 }
 
 .logo {
     display: flex;
     align-items: center;
-
 }
 
 .icon {
@@ -47,7 +53,7 @@ body {
     background-image: url(../Imagenes/iconoBeicon.jpg);
     background-size: cover;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 12px;
     margin-left: 10px;
 }
 
@@ -57,12 +63,12 @@ body {
     align-items: center;
     top: 0;
     left: 0;
-    margin-left: 55%;
+    margin-left: 62%;
 }
 
 .menu-lateral {
-    margin-top: 46px;
-    background-color: rgb(212, 212, 212);
+    margin-top: 47px;
+    background-color: rgb(236, 236, 236);
     position: fixed;
     width: 250px;
     text-align: justify;
@@ -112,8 +118,8 @@ a {
 }
 
 a:hover {
-    color: #464646;
-    text-shadow: 0px 0px 30px black;
+    color: #ff0000;
+    text-shadow: 0px 0px 30px rgb(255, 0, 0);
     transition: 250ms ease;
     cursor: pointer;
 }
@@ -121,8 +127,6 @@ a:hover {
 @media (max-width: 952px) {}
 
 @media (max-width: 658px) {
-    .icon {}
-
     .logo p {
         display: none;
     }
@@ -147,8 +151,15 @@ a:hover {
     .menu-superior {
         margin-left: 5%;
     }
+}
 
-    body {
-    }
+#goToEnglish{
+    color: rgb(255, 0, 0);
+}
 
+#goToEnglish:hover{
+    color: #000000;
+    text-shadow: 0px 0px 30px rgb(0, 0, 0);
+    transition: 250ms ease;
+    cursor: pointer;
 }
