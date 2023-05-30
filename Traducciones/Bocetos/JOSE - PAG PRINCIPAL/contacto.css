@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #23527c;
+  }
+  
+  .company-info {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0,);
+  }
+
+
+
+  
+  .container {
+    position: relative;
+    padding: 20px;
+  }
+  .boton-regreso {
+    display: flex;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 5px solid #ff0000;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: brillo 2s  ease-in-out infinite;
+    
+  }
+  .boton-regreso::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00ffcc, #33ccff, #cc33ff, #ff00cc);
+    background-size: 600% 600%;
+    animation: borde-neon 2s ease-in-out infinite;
+    z-index: -1;
+  }
+
+
+  @keyframes brillo {
+    0% { opacity: 1; }
+    50% { opacity: 0.5;   background-size: 600% 600%; }
+    100% { opacity: 1; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }

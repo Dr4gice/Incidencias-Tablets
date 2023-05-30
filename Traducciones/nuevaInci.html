@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nuevaInci.css">
+    <title>Create Incidents</title>
+    
+</head>
+
+<body>
+    
+    <div class="header">
+        <button class="boton">
+            <div class="linea"></div>
+            <div class="linea"></div>
+            <div class="linea"></div>
+        </button>
+        <div class="logo">
+            <div class="icon"></div>
+            <p>Your Icon</p>
+
+            
+        </div>
+        <nav class="menu-superior">
+            <ul>
+                <li><a id="goLogIn" href="../InicioSesion/signIn.html">Log In</a>
+                <li><a id="goSignIn" href="../InicioSesion/newAcc.html">Create Accont</a>
+                <li><a>FAQ</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </nav>
+        <nav class="menu-lateral">
+            <ul>
+                <li><a href="./nuevaInci.html">Create incidents</a></li>
+                <li><a>Query incident status</a></li>
+                <li><a>Manage incidents</a></li>
+                <li><a>blablabla</a></li>
+                <li><a>blebleble</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+    
+    <div id="main">
+        <div class="cont">
+            <div class="title">
+                Create incidents
+            </div>
+
+            <div class="newInci">
+                <form action="">
+                    <label for="nifAlumno" class="NIFalumno">Student's NIF</label>
+                    <input type="text" name="NIFalumno" id="NIFalumno" placeholder="NIF del alumno" required>
+
+                    <label for="tipoInci" class="tipoInci">Type of incident:</label>
+                    <select name="Incidencia" id="tipoInci" onchange="mostrarCampoAdicional()">
+                        <option value="Elige" disabled selected hidden>Select the problem</option>
+                        <option value="Rendimiento">Performance problems</option>
+                        <option value="Carga">Device charging problems</option>
+                        <option value="Pantalla">Device display problems</option>
+                        <option value="Software">System software failures</option>
+                        <option value="Internet">Internet connection problems</option>
+                        <option value="Reinicio">Device restarts on its own</option>
+                        <option value="Almacenamiento">Device storage problems</option>
+                        <option value="Otro">Other problems...</option>
+                    </select>
+
+                    <br>
+                    <br>
+
+                    <div id="otrosProblemas">
+                        <label for="OtrosProb" class="OtrosProb">Other problems</label>
+                        <input type="text" name="otrosProblemas" id="OtrosProb"
+                            placeholder="Escribe aquí el problema..." required>
+                    </div>
+
+                    <p>Description of the problem</p>
+                    <textarea name="Problema" id="problema" cols="30" rows="10"
+                        placeholder="Describe aquí el problema..." required></textarea>
+                </form>
+            </div>
+
+            <button type="button" id="nuevaIncidencia">Create Incidents</button>
+        </div>
+    </div>
+
+    <script src="pagInicio.js"></script>
+    <script src="nuevaInci.js"></script>
+</body>
+
+</html>

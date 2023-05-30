@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Log In</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="signIn.css">
+</head>
+
+<body>
+  <div class="contains">
+    <div class="title">
+      Log In
+    </div>
+
+    <div class="signIn">
+
+      <form>
+        <input type="text" id="LogDNI" name="LogDNI" placeholder="DNI:" required>
+        <br>
+        <input type="password" id="LogPasswd" name="LogPasswd" placeholder="Contraseña:" required>
+        <br>
+        <span id="wrongPasswordError" style="color: rgb(113, 6, 6);"></span>
+        <br>
+        <button type="button" id="sendSignIn">Iniciar Sesión</button>
+      </form>
+
+      <a id="createNewAccount" href="newAcc.html">Already have an account?</a>
+      <a id="goFrontPage" href="../index.html">Back Main menu</a>
+
+    </div>
+  </div>
+
+  <script src="../encriptar.js"></script>
+  <script src="signIn.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    background-color: rgb(43, 43, 51);
+}
+
+.header{
+    
+    margin: 50px;
+    padding: 30px 40px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tit{
+    width: 600px;
+    font-size: 55px;
+    color:white;
+}
+/*
+.idioma{
+    background-color: transparent;
+    border:1px solid white;
+    width: 125px;
+    height: 30px;
+    font-size: 15px;
+}*/
+
+.button{
+    width: 125px;
+    height: 30px;
+    background-color: rgb(49, 34, 110);
+}
+
+.esp{
+    background-color: transparent;
+    
+    width: 115px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.imgEsp{
+    margin: 0px 5px;
+}
+
+.ini_sesion, .registrarse, .idioma{
+    margin: 5px;
+}
+
+.ini_sesion, .registrarse{
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ini_sesion:hover, .registrarse:hover, .idioma:hover{
+    cursor: pointer;
+    height: 40px;
+}
+
+.topnav{
+    
+    float: right;
+    width: 900px;
+    margin: 0 50px;
+    overflow: hidden;
+    padding: 20px 30px;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.topnav a:hover {
+    background-color: rgb(49, 34, 110);
+    cursor: pointer;
+}
+
+.main{
+    
+    margin: 250px 200px;
+    height: 600px;
+}
+
+.tablet{
+    height: 600px;
+    width: 100%;
+}
