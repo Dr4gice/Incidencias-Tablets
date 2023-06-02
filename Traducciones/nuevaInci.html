@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="nuevaInci.css">
+    <link rel="stylesheet" href="/CrearIncidencias/nuevaInci.css">
     <title>Create Incidents</title>
     
 </head>
@@ -47,13 +47,13 @@
     <div id="main">
         <div class="cont">
             <div class="title">
-                Create incidents
+                New Ticket
             </div>
 
             <div class="newInci">
                 <form action="">
                     <label for="nifAlumno" class="NIFalumno">Student's NIF</label>
-                    <input type="text" name="NIFalumno" id="NIFalumno" placeholder="NIF del alumno" required>
+                    <input type="text" name="NIFalumno" id="NIFalumno" placeholder="Student's NIF" required>
 
                     <label for="tipoInci" class="tipoInci">Type of incident:</label>
                     <select name="Incidencia" id="tipoInci" onchange="mostrarCampoAdicional()">
@@ -79,7 +79,7 @@
 
                     <p>Description of the problem</p>
                     <textarea name="Problema" id="problema" cols="30" rows="10"
-                        placeholder="Describe aquí el problema..." required></textarea>
+                        placeholder="Description of the problem..." required></textarea>
                 </form>
             </div>
 
