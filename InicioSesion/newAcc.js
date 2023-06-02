@@ -36,7 +36,7 @@ botonRegistro.addEventListener('click', async function () {
         }
 
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
-        agregarUsuario(usuario.value, email.value, contrasenyaEncriptada, tipoCliente.value);
+        agregarUsuario(usuario.value.toUpperCase(), email.value, contrasenyaEncriptada, tipoCliente.value);
 
         location.href = principalArchivo;
         errorCamposVacios.textContent = "";

@@ -45,8 +45,9 @@ body {
 .icon {
     width: 30px;
     height: 30px;
-    background-image: url(../Imagenes/iconoBeicon.jpg);
+    background-image: url("../Imagenes/profile.jpg");
     background-size: cover;
+    background-position: center;
     border-radius: 50%;
     margin-right: 8px;
     margin-left: 10px;
@@ -122,8 +123,6 @@ a:hover {
 @media (max-width: 952px) {}
 
 @media (max-width: 658px) {
-    .icon {}
-
     .logo p {
         display: none;
     }

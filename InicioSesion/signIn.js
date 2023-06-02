@@ -18,6 +18,8 @@ botonLogin.addEventListener("click", async function () {
         errorContrasenyaIncorrecta.textContent = msgContrasenyaIncorrecta;
     } else { // Comprueba que la Contraseña coincida con alguna que esté guardada
         if (await comprobarContrasenyaBD(nif.value, await encriptar(contrasenya.value))) {
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("dniUsuarioLogged", nif.value.toUpperCase());
             location.href = principalArchivo;
         } else {
             contrasenya.value = "";
