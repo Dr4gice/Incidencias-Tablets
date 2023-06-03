@@ -30,6 +30,46 @@ function encriptar(contrasenya) {
         });
 }
 
+function iniciadoSesion() {
+    if (isLoggedIn === 'true') {
+        const rutaRelativa = location.pathname;
+        const nombreArchivo = rutaRelativa.substring(rutaRelativa.lastIndexOf('/') + 1);
+        if (nombreArchivo === "index.html") {
+            const dniUsuarioLogged = localStorage.getItem("dniUsuarioLogged");
+            const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
+            const usuarioJson = listaUsuarios.find(usuario => usuario.nif === dniUsuarioLogged);
+            if (usuarioJson.tipoCliente === "Alumno") {
+                icono.style.backgroundImage = 'url("Imagenes/Alumno.jpg")';
+            } else if (usuarioJson.tipoCliente === "Profesor") {
+                icono.style.backgroundImage = 'url("Imagenes/Profesor.png")';
+            } else if (usuarioJson.tipoCliente === "Director") {
+                icono.style.backgroundImage = 'url("Imagenes/Director.png")';
+            } else if (usuarioJson.tipoCliente === "Admin") {
+                icono.style.backgroundImage = 'url("Imagenes/Admin.png")';
+            }
+            nombreUsuario.textContent = usuarioJson.usuario;
+            botonLogin.textContent = "";
+            botonRegistro.textContent = "Cerrar Sesion";
+        } else {
+            const dniUsuarioLogged = localStorage.getItem("dniUsuarioLogged");
+            const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
+            const usuarioJson = listaUsuarios.find(usuario => usuario.nif === dniUsuarioLogged);
+            if (usuarioJson.tipoCliente === "Alumno") {
+                icono.style.backgroundImage = 'url("../Imagenes/Alumno.jpg")';
+            } else if (usuarioJson.tipoCliente === "Profesor") {
+                icono.style.backgroundImage = 'url("../Imagenes/Profesor.png")';
+            } else if (usuarioJson.tipoCliente === "Director") {
+                icono.style.backgroundImage = 'url("../Imagenes/Director.png")';
+            } else if (usuarioJson.tipoCliente === "Admin") {
+                icono.style.backgroundImage = 'url("../Imagenes/Admin.png")';
+            }
+            nombreUsuario.textContent = usuarioJson.usuario;
+            botonLogin.textContent = "";
+            botonRegistro.textContent = "Cerrar Sesion";
+        }
+    }
+}
+
 /////////////////////////////
 //  Funciones del Usuario  //
 /////////////////////////////

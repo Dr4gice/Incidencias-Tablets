@@ -38,6 +38,8 @@ botonRegistro.addEventListener('click', async function () {
         let contrasenyaEncriptada = await encriptar(contrasenya.value);
         agregarUsuario(usuario.value.toUpperCase(), email.value, contrasenyaEncriptada, tipoCliente.value);
 
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("dniUsuarioLogged", usuario.value.toUpperCase());
         location.href = principalArchivo;
         errorCamposVacios.textContent = "";
     }

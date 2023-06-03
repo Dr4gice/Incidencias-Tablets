@@ -43,6 +43,7 @@ body {
     height: 30px;
     background-image: url("");
     background-size: cover;
+    background-position: center;
     border-radius: 50%;
     margin-right:8px ;
     margin-left: 10px;
