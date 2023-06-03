@@ -2,6 +2,7 @@ const nav = document.querySelector('.menu-lateral');
 const botonRegistro = document.getElementById('goSignIn');
 const botonLogin = document.getElementById('goLogIn');
 const nombreUsuario = document.getElementById("nombreUsuario");
+const icono = document.querySelector('.icon');
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 
 const carpetaLogin = "InicioSesion/";
@@ -34,13 +35,4 @@ botonLogin.addEventListener('click', function () {
     location.href = carpetaLogin + loginArchivo;
 });
 
-
-if (isLoggedIn === 'true') {
-    const dniUsuarioLogged = localStorage.getItem("dniUsuarioLogged");
-    const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
-    const usuarioJson = listaUsuarios.find(usuario => usuario.nif === dniUsuarioLogged);
-    console.log(usuarioJson);
-    nombreUsuario.textContent = usuarioJson.usuario;
-    botonLogin.textContent = "";
-    botonRegistro.textContent = "Cerrar Sesion";
-}
+iniciadoSesion();
