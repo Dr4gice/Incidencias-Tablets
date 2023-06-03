@@ -1,7 +1,6 @@
 const tipoInci = document.getElementById("tipoInci");
 const otrosProblemas = document.getElementById("otrosProblemas");
 const botonIncidencia = document.getElementById("nuevaIncidencia");
-const usuario = document.getElementById("NIFalumno");
 const tipoIncidencia = document.getElementById("tipoInci");
 const problema = document.getElementById("problema");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
@@ -53,7 +52,7 @@ if (isLoggedIn === 'true') {
 }
 
 botonIncidencia.addEventListener("click", function () {
-    if (usuario.value === "" || tipoIncidencia.value === "" || problema.value === "") {
+    if (tipoIncidencia.value === "" || problema.value === "") {
         errorCamposVacios.textContent = "Completa todos los campos";
         let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
         incidenciaDatos = listaRecuperada;
@@ -61,13 +60,7 @@ botonIncidencia.addEventListener("click", function () {
     } else {
         // Comprobar formato DNI
 
-        if (!comprobarNifBD(usuario.value)) {
-            usuario.value = "";
-            errorCamposVacios.textContent = "DNI incorrecto / No existe"
-            return;
-        }
-
-        agregarIncidencia(usuario.value);
+        agregarIncidencia();
 
         location.href = principalArchivo;
         errorCamposVacios.textContent = "";
@@ -87,9 +80,8 @@ function mostrarCampoAdicional() {
 
 /**
  * Añade a la lista de incidencias los datos de una nueva incidencia
- * @param {string} nif DNI del usuario
  */
-function agregarIncidencia(nif) {
+function agregarIncidencia() {
     let usuarioDatos = [];
 
     try {
