@@ -1,87 +1,49 @@
-:root{
-    --color1:rgb(219,144,5);
-    --color2: rgb(54, 202, 54);
-    --color3: rgb(13, 110, 221);
-    --fondo:black;
-    --titulos: 33px;
-    --subtitulos: 18px;
-    --margenes: 60px;
-    --espacios: 10px;
-    --espacios-contenido:45;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Cuerpo Entero */
 
 body{
-  font-family: Open Sans, arial, sans-serif;
-    background-color: var(--fondo);
-}
-
-
-.contenedor{
-  margin: auto;
-  padding: var(--margenes) 0;
-  width: 90%;
-  max-width: 1000px;
-  text-align: center;
-  overflow: hidden;
-}
-
-
-
-.contenedor p{
-  font-size: var(--subtitulos);
-  font-weight: 300;
-  color:white;
+  margin: 0;
+  padding: 0;
 }
 
 footer{
-  background: black;
   color: white;
-  background-repeat: no-repeat;
-  background-size: 10%;
   width: 100%;
   height: 0px;
+  font-family: Open Sans, arial, sans-serif;
 }
 
-
-
-.fab{
-  font-size: 60px;
-  color: white;
-  margin-bottom: var(--espacios);
-  display: inline-block;
-  transition: color 200ms ease;
-  margin-left: 20px;
-  margin-right: 20px;
-
-}
-
-
-
-footer p{ 
-
-  font-size: 40px;
-}
-
-
-footer ul {
-  list-style: none;
-  padding: 0;
+.container{
+  background: black;
+  background-color: black;
   margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-footer ul li {
-  margin-bottom: 10px;
+/* Texto General */
+
+.titulo{
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
-footer ul li a {
-  color: white;
-  text-decoration: none;
+.subtitulo{
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Estilos específicos de las columnas */
@@ -91,6 +53,18 @@ footer ul li a {
 }
 
 /* Estilos para los iconos de redes sociales */
+
+.fab{
+  font-size: 60px;
+  color: white;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: color 200ms ease;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
 .social-media {
   color: white;
   list-style: none;
@@ -98,39 +72,19 @@ footer ul li a {
   margin: 0;
 }
 
-.social-media li {
+.listaRedes {
   display: inline-block;
   margin-right: 10px;
 }
 
-.social-media li a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-footer p.copyright {
-  font-size: 12px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-/*
-Modificaciones Selam
-*/
-
-#enlaces {
-  padding-bottom: 12px;
-}
-
-a {
+.link {
   transition: color 120ms ease;
   color: white;
   text-decoration: none;
 }
-a:hover{
+.link:hover{
   transition: color 200ms ease;
-  color: rgb(255, 42, 42);
+  color: rgb(255, 20, 20);
 }
 
 .fa-youtube:hover{
@@ -148,11 +102,3 @@ a:hover{
   color: rgb(0, 140, 255);
 }
 
-.hola{
-  margin-top: 55px;
-  padding-top: 100px;
-}
-
-.parrafoblanco{
-  margin: 17px;
-}

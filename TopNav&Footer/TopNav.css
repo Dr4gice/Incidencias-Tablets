@@ -1,20 +1,17 @@
-* {
-    font-family: Open Sans, arial, sans-serif;
-    color: black;
-}
-
 body {
-    background-repeat: no-repeat;
-    background-size: cover;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    height: calc(100vh - 80px);
 }
 
 .container {
     background-color: rgb(236, 236, 236);
     border-bottom: 1px solid rgb(0, 0, 0);
+    font-family: Open Sans, arial, sans-serif;
+    color: black;
+    box-sizing: border-box;   
+}
+.icon{
+    border: 1px solid #000;
 }
 
 .header {
@@ -91,33 +88,33 @@ body {
     flex-direction: column;
 }
 
-.menu-lateral ul li {
+.menu-lateral .listaMenu .conenidoLista {
     margin-top: 10px;
     font-size: 13px;
 }
 
-ul {
+.listaMenu{
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul li a {
+.listaMenu .conenidoLista .link {
     padding: 0 16px;
 }
 
-p {
+.userName {
     margin: 0;
 }
 
-a {
+.link {
     text-decoration: none;
     color: black;
-    transition: 80ms ease;
+    transition: 250ms ease;
 }
 
-a:hover {
+.link:hover {
     color: #ff0000;
     text-shadow: 0px 0px 30px rgb(255, 0, 0);
     transition: 250ms ease;
@@ -127,20 +124,20 @@ a:hover {
 @media (max-width: 952px) {}
 
 @media (max-width: 658px) {
-    .logo p {
+    .logo .username {
         display: none;
     }
 
-    .menu-superior ul {
+    .menu-superior .listaMenu {
         font-size: 10px;
         margin-left: 5%;
     }
 
-    .menu-superior ul li {
+    .menu-superior .listaMenu .conenidoLista {
         padding: 8px;
     }
 
-    ul li a {
+    .listaMenu .conenidoLista .link {
         padding: 0px;
     }
 
@@ -155,6 +152,7 @@ a:hover {
 
 #goToEnglish{
     color: rgb(255, 0, 0);
+    transition: 250ms ease;
 }
 
 #goToEnglish:hover{
