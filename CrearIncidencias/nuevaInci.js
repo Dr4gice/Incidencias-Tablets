@@ -93,13 +93,22 @@ function agregarIncidencia() {
     const dniUsuarioLogged = localStorage.getItem("dniUsuarioLogged");
     usuarioEncontrado = usuarioDatos.find(usuario => usuario.nif === dniUsuarioLogged);
 
+    const timestampActual = new Date().getTime();
+    // const fechaActual = new Date(timestampActual);
+    // const dia = fechaActual.getDate();
+    // const mes = fechaActual.getMonth() + 1;
+    // const anyo = fechaActual.getFullYear();
+    
+    // const fechaFormateada = dia + "/" + mes + "/" + anyo;
+
     const idIncidencia = generarId();
     const incidenciaJson = {
         nif: dniUsuarioLogged,
         incidencia: {
             id: idIncidencia,
             tipoIncidencia: tipoIncidencia.value,
-            problema: problema.value
+            problema: problema.value,
+            fecha: timestampActual
         }
     }
 

@@ -30,6 +30,9 @@ function encriptar(contrasenya) {
         });
 }
 
+/**
+ * Conjunto de acciones para cuando esté iniciado sesión o no
+ */
 function iniciadoSesion() {
     if (isLoggedIn === 'true') {
         const rutaRelativa = location.pathname;
@@ -80,6 +83,9 @@ function iniciadoSesion() {
     }
 }
 
+/**
+ * Conjunto de acciones para cuando el usuario cierra sesión
+ */
 function cerradoSesion() {
     if (botonRegistro.textContent === "Crear Cuenta") {
         location.href = carpetaLogin + registroArchivo;
