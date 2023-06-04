@@ -1,6 +1,5 @@
 const nav = document.querySelector('.menu-lateral');
 const boton = document.querySelector('.boton');
-const botonLineas = document.querySelectorAll('.boton .linea');
 const botonRegistro = document.getElementById('goSignIn');
 const botonLogin = document.getElementById('goLogIn');
 const nombreUsuario = document.querySelector(".userName");

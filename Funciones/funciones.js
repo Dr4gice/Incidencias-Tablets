@@ -67,6 +67,32 @@ function iniciadoSesion() {
             botonLogin.textContent = "";
             botonRegistro.textContent = "Cerrar Sesion";
         }
+    } else {
+        nombreUsuario.textContent = "";
+        icono.style.backgroundImage = 'url("")';
+        icono.style.borderColor = "transparent";
+        botonLogin.textContent = "Iniciar Sesion";
+        botonRegistro.textContent = "Crear Cuenta";
+        botonLineas.forEach(linea => {
+            linea.style.height = "0px";
+            linea.style.width = "0px";
+        });
+    }
+}
+
+function cerradoSesion() {
+    if (botonRegistro.textContent === "Crear Cuenta") {
+        location.href = carpetaLogin + registroArchivo;
+    } else {
+        const rutaRelativa = location.pathname;
+        const nombreArchivo = rutaRelativa.substring(rutaRelativa.lastIndexOf('/') + 1);
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.setItem("dniUsuarioLogged", "");
+        if (nombreArchivo === "index.html") {
+            location.reload();
+        } else {
+            location.href = "../index.html";
+        }
     }
 }
 

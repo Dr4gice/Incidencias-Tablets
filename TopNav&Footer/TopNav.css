@@ -10,9 +10,6 @@ body {
     color: black;
     box-sizing: border-box;   
 }
-.icon{
-    border: 1px solid #000;
-}
 
 .header {
     display: flex;
@@ -50,6 +47,7 @@ body {
     background-image: url("");
     background-size: cover;
     background-position: center;
+    border: 1px solid #000;
     border-radius: 50%;
     margin-right: 8px;
     margin-left: 10px;

@@ -5,19 +5,21 @@ const tipoIncidencia = document.getElementById("tipoInci");
 const problema = document.getElementById("problema");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
 const nav = document.querySelector('.menu-lateral');
+const boton = document.querySelector('.boton');
 const botonRegistro = document.getElementById('goSignIn');
 const botonLogin = document.getElementById('goLogIn');
-const nombreUsuario = document.getElementById("nombreUsuario");
+const nombreUsuario = document.querySelector(".userName");
 const icono = document.querySelector('.icon');
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-const principalArchivo = "adminInci.html";
+const principalArchivo = "estadoIncidencia.html";
+const carpetaArchivo = "../EstadoIncidencias/"
 const carpetaLogin = "../InicioSesion/";
 const registroArchivo = "newAcc.html";
 const loginArchivo = "signIn.html";
 
 // Abrir y Cerrar el Menú Lateral
-document.querySelector('.boton').addEventListener('click', function () {
+boton.addEventListener('click', function () {
     if (isLoggedIn === 'true') {
         nav.classList.toggle('active');
     }
@@ -25,16 +27,7 @@ document.querySelector('.boton').addEventListener('click', function () {
 
 // Botón de Registro, redirigir
 botonRegistro.addEventListener('click', function () {
-    if (botonRegistro.textContent === "Crear Cuenta") {
-        location.href = carpetaLogin + registroArchivo;
-    } else {
-        location.href = "../index.html"
-        localStorage.setItem("isLoggedIn", "false");
-        localStorage.setItem("dniUsuarioLogged", "");
-        nombreUsuario.textContent = "";
-        botonLogin.textContent = "Iniciar Sesion";
-        botonRegistro.textContent = "Crear Cuenta";
-    }
+    cerradoSesion();
 });
 
 // Botón de Iniciar Sesión, redirigir
@@ -55,7 +48,7 @@ botonIncidencia.addEventListener("click", function () {
 
         agregarIncidencia();
 
-        location.href = principalArchivo;
+        location.href = carpetaArchivo + principalArchivo;
         errorCamposVacios.textContent = "";
     }
 })
