@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estadoIncidencia.css">
+    <!-- <link rel="stylesheet" href="../TopNav&Footer/TopNav.css"> -->
+    <title>Estados Incidencias</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <button class="boton">
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+            </button>
+
+            <div class="logo">
+                <div class="icon"></div>
+                <span id="nombreUsuario"></span>
+
+            </div>
+            <nav class="menu-superior">
+                <ul>
+                    <li><a target="_top" id="goLogIn" href="/InicioSesion/signIn.html">Iniciar Sesion</a>
+                    <li><a target="_top" id="goSignIn" href="/InicioSesion/newAcc.html">Crear Cuenta</a>
+                    <li><a target="_top" id="goToFaq" href="/Faq/FaqPage.html">FAQ</a></li>
+                    <li><a target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a>
+                    </li> |
+                    <li><a target="_top" id="goToEnglish" href="/Traducciones/index.html">English</a></li>
+                </ul>
+            </nav>
+            <nav class="menu-lateral">
+                <ul>
+                    <li><a target="_top" href="nuevaInci.html">Crear indicidencias</a></li>
+                    <li><a target="_top" href="estadoIncidencia.html">Consultar estado
+                            incidencias</a></li>
+                    <li><a target="_top" href="/AdministrarIncidencias/administrarIncidencias.html">Administrar
+                            incidencias</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div class="cont">
+            <div class="title">
+                Estados de las incidencias
+            </div>
+
+            <label for="problemaBusqueda">Buscar por nombre problema:</label>
+            <input type="text" id="problemaBusqueda">
+            <button id="btnBuscar">Buscar</button>
+            <br>
+            <br>
+
+            <table id="miTabla">
+                <thead>
+                    <tr>
+                        <th>Id incidencia</th>
+                        <th width: 50%;>Problema</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de datos aquí -->
+                </tbody>
+            </table>
+
+
+            <br>
+            <br>
+            <button id="borrarDatos">Borrar datos guardados</button>
+            <button id="btnMostrarTodos">Mostrar todos</button>
+            <br>
+            <br>
+            <button><a href="nuevaInci.html">volver atrás</a></button>
+            <br>
+            <br>
+            <a id="volverPagPrinc" href="../index.html">Volver Menú principal</a>
+        </div>
+    </div>
+
+    <!-- <script src="../TopNav&Footer/TopNav.js"></script> -->
+    <script src="estadoIncidencia.js"></script>
+
+</body>
+
+</html>
