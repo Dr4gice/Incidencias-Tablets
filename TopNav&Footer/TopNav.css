@@ -3,7 +3,7 @@ body {
     padding: 0;
 }
 
-.container {
+.containerNav {
     background-color: rgb(236, 236, 236);
     border-bottom: 1px solid rgb(0, 0, 0);
     font-family: Open Sans, arial, sans-serif;
@@ -47,10 +47,11 @@ body {
 .icon {
     width: 30px;
     height: 30px;
-    background-image: url(../Imagenes/iconoBeicon.jpg);
+    background-image: url("");
     background-size: cover;
+    background-position: center;
     border-radius: 50%;
-    margin-right: 12px;
+    margin-right: 8px;
     margin-left: 10px;
 }
 
@@ -88,7 +89,7 @@ body {
     flex-direction: column;
 }
 
-.menu-lateral .listaMenu .conenidoLista {
+.menu-lateral .listaMenu .contenidoLista {
     margin-top: 10px;
     font-size: 13px;
 }
@@ -100,7 +101,7 @@ body {
     margin: 0;
 }
 
-.listaMenu .conenidoLista .link {
+.listaMenu .contenidoLista .link {
     padding: 0 16px;
 }
 
@@ -121,6 +122,25 @@ body {
     cursor: pointer;
 }
 
+#goToEnglish{
+    color: rgb(255, 0, 0);
+    transition: 250ms ease;
+}
+
+#goToEnglish:hover{
+    color: #000000;
+    text-shadow: 0px 0px 30px rgb(0, 0, 0);
+    transition: 250ms ease;
+    cursor: pointer;
+}
+
+.listaLateral{
+    padding-top: 20px;
+    text-align: left;
+    font-size: larger;
+}
+
+
 @media (max-width: 952px) {}
 
 @media (max-width: 658px) {
@@ -133,11 +153,11 @@ body {
         margin-left: 5%;
     }
 
-    .menu-superior .listaMenu .conenidoLista {
+    .menu-superior .listaMenu .contenidoLista {
         padding: 8px;
     }
 
-    .listaMenu .conenidoLista .link {
+    .listaMenu .contenidoLista .link {
         padding: 0px;
     }
 
@@ -150,14 +170,3 @@ body {
     }
 }
 
-#goToEnglish{
-    color: rgb(255, 0, 0);
-    transition: 250ms ease;
-}
-
-#goToEnglish:hover{
-    color: #000000;
-    text-shadow: 0px 0px 30px rgb(0, 0, 0);
-    transition: 250ms ease;
-    cursor: pointer;
-}

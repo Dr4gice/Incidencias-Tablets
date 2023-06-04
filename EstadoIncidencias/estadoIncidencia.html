@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estadoIncidencia.css">
     <link rel="stylesheet" href="../TopNav&Footer/TopNav.css">
+    <link rel="stylesheet" href="/TopNav&Footer/Footer.css">
+    <script src="https://kit.fontawesome.com/2a9d472dd5.js" crossorigin="anonymous"></script>
     <title>Estados de las incidencias</title>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="containerNav">
         <div class="header">
             <button class="boton">
                 <div class="linea"></div>
@@ -22,33 +24,28 @@
 
             <div class="logo">
                 <div class="icon"></div>
-                <span id="nombreUsuario"></span>
+                <p class="userName">Usuario</p>
 
             </div>
             <nav class="menu-superior">
-                <ul>
-                    <li><a target="_top" id="goLogIn" href="/InicioSesion/signIn.html">Iniciar Sesion</a>
-                    <li><a target="_top" id="goSignIn" href="/InicioSesion/newAcc.html">Crear Cuenta</a>
-                    <li><a target="_top" id="goToFaq" href="/Faq/FaqPage.html">FAQ</a></li>
-                    <li><a target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a>
-                    </li> |
-                    <li><a target="_top" id="goToEnglish" href="/Traducciones/index.html">English</a></li>
+                <ul class="listaMenu">
+                    <li class="contenidoLista"><a class="link" target="_top" id="goLogIn" href="../InicioSesion/signIn.html">Iniciar Sesion</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goSignIn" href="../InicioSesion/newAcc.html">Crear Cuenta</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToFaq" href="../Faq/FaqPage.html">FAQ</a></li>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a></li> |
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish" href="../Traducciones/index.html">English</a></li>
                 </ul>
             </nav>
             <nav class="menu-lateral">
                 <ul>
-                    <li><a target="_top" href="/CrearIncidencias/nuevaInci.html">Crear indicidencias</a></li>
-                    <li><a target="_top" href="/EstadoIncidencias/estadoIncidencia.html">Consultar estado
-                            incidencias</a></li>
-                    <li><a target="_top" href="/AdministrarIncidencias/administrarIncidencias.html">Administrar
-                            incidencias</a></li>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../CrearIncidencias/nuevaInci.html">Crear indicidencias</a></li>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../EstadoIncidencias/estadoIncidencia.html">Administrar Incidencias</a></li>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../EstadoTablets/estadoTablets.html">Comprobar Tablets</a></li>
                 </ul>
             </nav>
-
-
         </div>
     </div>
-
+    <script src="/paginaPrincipal/index.js"></script>
 
     <div id="main">
         <div class="cont">
@@ -88,11 +85,39 @@
             </table>
 
             <br>
-            <a id="volverPagPrinc" href="../index.html">Volver Menú principal</a>
+            <a class="link" id="volverPagPrinc" href="../index.html">Volver Menú principal</a>
         </div>
     </div>
-
     <script src="../TopNav&Footer/TopNav.js"></script>
+
+    <footer>
+        <div class="containerFoot">
+          <div>      
+            <div class="col-md-4Foot ">
+              <h4 class="tituloFoot ">Servicio</h4>
+      
+              <p class="subtituloFoot ">C. Manuel Sanchis Guarner, 5<br>03330 Crevillent, Alicante</p>
+              <p class="subtituloFoot ">Soporte: 420 66 69 00</p>
+      
+            </div>
+          </div>
+          <div>
+            <div class="col-md-4Foot ">
+              <h4 class="tituloFoot ">Redes Sociales</h4>
+              <ul class="social-mediaFoot ">
+                <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://www.youtube.com/?hl=es"><i class="fab  fa-youtube"></i></a></li>
+                <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://github.com/Dr4gice/Incidencias-Tablets"><i class="fab fa-github"></i></a></li>
+                <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="col-md-12Foot">
+              <p>&copy; 2023 TechPad. Desarrollado por TechMaster. <a class="linkFoot " href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Aviso de Privacidad</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
 
 
 </body>

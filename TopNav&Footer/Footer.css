@@ -12,7 +12,7 @@ footer{
   font-family: Open Sans, arial, sans-serif;
 }
 
-.container{
+.containerFoot{
   background: black;
   background-color: black;
   margin: 0;
@@ -26,14 +26,14 @@ footer{
 
 /* Texto General */
 
-.titulo{
+.tituloFoot{
   font-size: 30px;
   padding: 0px;
   margin: 0px;
   margin-bottom: 20px;
 }
 
-.subtitulo{
+.subtituloFoot{
   font-size: 20px;
   padding: 0px;
   margin: 0px;
@@ -47,7 +47,7 @@ ul {
 }
 
 /* Estilos específicos de las columnas */
-.col-md-4 {
+.col-md-4Foot{
   width: 50%;
   float: left;
 }
@@ -65,24 +65,24 @@ ul {
 }
 
 
-.social-media {
+.social-mediaFoot {
   color: white;
   list-style: none;
   padding: 0px;
   margin: 0;
 }
 
-.listaRedes {
+.listaRedesFoot {
   display: inline-block;
   margin-right: 10px;
 }
 
-.link {
+.linkFoot {
   transition: color 120ms ease;
   color: white;
   text-decoration: none;
 }
-.link:hover{
+.linkFoot:hover{
   transition: color 200ms ease;
   color: rgb(255, 20, 20);
 }
@@ -90,6 +90,7 @@ ul {
 .fa-youtube:hover{
   transition: color 200ms ease;
   color: rgb(255, 20, 20);
+  
 }
 
 .fa-github:hover{
