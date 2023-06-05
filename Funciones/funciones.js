@@ -115,3 +115,18 @@ function comprobarContrasenyaBD(dni, contrasenya) {
         return false;
     }
 }
+
+/**
+ * Genera un id de tablet aleatorio
+ * @param {number} indice Indice a incrementar
+ * @returns {string}
+ */
+function generarId(indice) {
+    let id = "";
+    for (let i = 0; i < 6-indice.toString().length; i++) {
+        id += 0;
+    }
+    id += indice;
+
+    return id;
+}

@@ -80,8 +80,19 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
         let usuarioDatos = [];
     }
 
+    let indiceTablet = 1;
+
+    try {
+        let indiceRecuperado = localStorage.getItem("indiceTablet");
+        if (indiceRecuperado !== null) {
+            indiceTablet = parseInt(indiceRecuperado);
+        }
+    } catch (error) {
+        let indiceTablet = 1;
+    }
+
     const nombreUsuario = generarNombre();
-    const idTablet = generarId();
+    const idTablet = generarId(indiceTablet);
     const marcaTablet = generarMarca();
     const usuarioJson = {
         nif: nif,
@@ -100,9 +111,10 @@ function agregarUsuario(nif, email, contrasenya, tipoCliente) {
         }
     }
 
+    indiceTablet += 1;
     usuarioDatos.push(usuarioJson);
     localStorage.setItem("listaUsuarios", JSON.stringify(usuarioDatos));
-    console.log(usuarioDatos);
+    localStorage.setItem("indiceTablet", indiceTablet);
 }
 
 /**
@@ -118,27 +130,6 @@ function generarNombre() {
     }
 
     return nombreAleatorio;
-}
-
-/**
- * Genera un id de tablet aleatorio
- * @returns {string} Id de la tablet
- */
-function generarId() {
-    let usuarioDatos = [];
-
-    try {
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        if (listaRecuperada !== null) {
-            usuarioDatos = listaRecuperada;
-        }
-    } catch (error) {
-        let usuarioDatos = [];
-    }
-
-    let id = "" + usuarioDatos ? usuarioDatos.length: 0;
-
-    return id;
 }
 
 /**

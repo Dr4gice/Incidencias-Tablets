@@ -14,6 +14,19 @@ try {
     let incidenciaDatos = [];
 }
 
+let usuarioDatos = [];
+
+try {
+    let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
+    if (listaRecuperada !== null) {
+        usuarioDatos = listaRecuperada;
+    }
+} catch (error) {
+    let usuarioDatos = [];
+}
+
+usuarioLogged = localStorage.getItem("dniUsuarioLogged");
+
 mostrarFilas(incidenciaDatos);
 
 // Botón de borrar una incidencia
@@ -38,27 +51,66 @@ function mostrarFilas(listaIncidencias) {
     const tbody = tabla.tBodies[0];
 
     tbody.innerHTML = "";
+    usuarioEncontrado = usuarioDatos.find(usuario => usuario.nif === usuarioLogged);
 
     for (let i = 0; i < listaIncidencias.length; i++) {
-        const fila = document.createElement("tr");
-        const celdaidInci = document.createElement("td");
-        const celdaTipoInci = document.createElement("td");
-        const celdaFecha = document.createElement("td");
-        const celdaAcciones = document.createElement("td");
-        const btnBorrar = document.createElement("button");
+        if (usuarioEncontrado.tipoCliente === "Admin" || usuarioEncontrado.tipoCliente === "Director") {
+            const fila = document.createElement("tr");
+            const celdaidInci = document.createElement("td");
+            const celdaTipoInci = document.createElement("td");
+            const celdaFecha = document.createElement("td");
+            const celdaAcciones = document.createElement("td");
+            const btnBorrar = document.createElement("button");
+    
+            celdaidInci.textContent = listaIncidencias[i].incidencia.id;
+            celdaTipoInci.textContent = listaIncidencias[i].incidencia.tipoIncidencia;
+            const fechaActual = new Date(listaIncidencias[i].incidencia.fecha);
+            let dia = fechaActual.getDate().toString().padStart(2, '0');
+            let mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+            let anyo = fechaActual.getFullYear();
+            
+            const fechaFormateada = dia + "/" + mes + "/" + anyo;
+            celdaFecha.textContent = fechaFormateada;
+            btnBorrar.textContent = "X";
+    
+            btnBorrar.classList.add("btnBorrar");
+    
+            fila.appendChild(celdaidInci);
+            fila.appendChild(celdaTipoInci);
+            fila.appendChild(celdaFecha);
+            celdaAcciones.appendChild(btnBorrar);
+            fila.appendChild(celdaAcciones);
+            tbody.appendChild(fila);
+        } else {
+            incidenciaEncontrada = incidenciaDatos.find(incidencia => incidencia.nif === usuarioLogged);
 
-        celdaidInci.textContent = listaIncidencias[i].incidencia.id;
-        celdaTipoInci.textContent = listaIncidencias[i].incidencia.tipoIncidencia;
-        celdaFecha.textContent = listaIncidencias[i].incidencia.fecha;
-        btnBorrar.textContent = "X";
-
-        btnBorrar.classList.add("btnBorrar");
-
-        fila.appendChild(celdaidInci);
-        fila.appendChild(celdaTipoInci);
-        fila.appendChild(celdaFecha);
-        celdaAcciones.appendChild(btnBorrar);
-        fila.appendChild(celdaAcciones);
-        tbody.appendChild(fila);
+            const fila = document.createElement("tr");
+            const celdaidInci = document.createElement("td");
+            const celdaTipoInci = document.createElement("td");
+            const celdaFecha = document.createElement("td");
+            const celdaAcciones = document.createElement("td");
+            const btnBorrar = document.createElement("button");
+    
+            celdaidInci.textContent = incidenciaEncontrada.incidencia.id;
+            celdaTipoInci.textContent = incidenciaEncontrada.incidencia.tipoIncidencia;
+            const fechaActual = new Date(incidenciaEncontrada.incidencia.fecha);
+            let dia = fechaActual.getDate().toString().padStart(2, '0');
+            let mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+            let anyo = fechaActual.getFullYear();
+            
+            const fechaFormateada = dia + "/" + mes + "/" + anyo;
+            celdaFecha.textContent = fechaFormateada;
+            btnBorrar.textContent = "X";
+    
+            btnBorrar.classList.add("btnBorrar");
+    
+            fila.appendChild(celdaidInci);
+            fila.appendChild(celdaTipoInci);
+            fila.appendChild(celdaFecha);
+            celdaAcciones.appendChild(btnBorrar);
+            fila.appendChild(celdaAcciones);
+            tbody.appendChild(fila);
+            break;
+        }
     }
 }

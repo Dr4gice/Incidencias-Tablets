@@ -17,23 +17,14 @@ botonIncidencia.addEventListener("click", function () {
     } else {
         // Comprobar formato DNI
 
-        agregarIncidencia();
-
-        location.href = carpetaArchivo + principalArchivo;
-        errorCamposVacios.textContent = "";
+        if (agregarIncidencia()) {
+            location.href = carpetaArchivo + principalArchivo;
+            errorCamposVacios.textContent = "";
+        } else {
+            errorCamposVacios.textContent = "Ya tienes una incidencia";
+        }
     }
 })
-
-/**
- * Campo adicional de la selección de problemas
- */
-// function mostrarCampoAdicional() {
-//     if (tipoInci.value === "Otro") {
-//         otrosProblemas.style.display = "block";
-//     } else {
-//         otrosProblemas.style.display = "none";
-//     }
-// }
 
 /**
  * Añade a la lista de incidencias los datos de una nueva incidencia
@@ -61,54 +52,43 @@ function agregarIncidencia() {
         let incidenciaDatos = [];
     }
 
+    let indiceIncidencias = 1;
+
+    try {
+        let indiceRecuperado = localStorage.getItem("indiceIncidencias");
+        if (indiceRecuperado !== null) {
+            indiceIncidencias = parseInt(indiceRecuperado);
+        }
+    } catch (error) {
+        let indiceIncidencias = 1;
+    }
+
     const dniUsuarioLogged = localStorage.getItem("dniUsuarioLogged");
     usuarioEncontrado = usuarioDatos.find(usuario => usuario.nif === dniUsuarioLogged);
 
-    const timestampActual = new Date().getTime();
-    // const fechaActual = new Date(timestampActual);
-    // const dia = fechaActual.getDate();
-    // const mes = fechaActual.getMonth() + 1;
-    // const anyo = fechaActual.getFullYear();
+    incidenciaEncontrada = incidenciaDatos.find(incidencia => incidencia.nif === dniUsuarioLogged);
+
+    if (!incidenciaEncontrada) {
+        const timestampActual = new Date().getTime();
+
+        const idIncidencia = generarId(indiceIncidencias);
+        const incidenciaJson = {
+            nif: dniUsuarioLogged,
+            incidencia: {
+                id: idIncidencia,
+                tipoIncidencia: tipoIncidencia.value.toLowerCase(),
+                problema: problema.value,
+                fecha: timestampActual
+            }
+        }
     
-    // const fechaFormateada = dia + "/" + mes + "/" + anyo;
+        indiceIncidencias += 1;
+        incidenciaDatos.push(incidenciaJson);
+        localStorage.setItem("listaIncidencias", JSON.stringify(incidenciaDatos));
+        localStorage.setItem("indiceIncidencias", indiceIncidencias);
 
-    const idIncidencia = generarId();
-    const incidenciaJson = {
-        nif: dniUsuarioLogged,
-        incidencia: {
-            id: idIncidencia,
-            tipoIncidencia: tipoIncidencia.value.toLowerCase(),
-            problema: problema.value,
-            fecha: timestampActual
-        }
+        return true;
+    } else {
+        return false;
     }
-
-    incidenciaDatos.push(incidenciaJson);
-    localStorage.setItem("listaIncidencias", JSON.stringify(incidenciaDatos));
-}
-
-/**
- * Genera un id de tablet aleatorio
- * @returns {string} Id de la tablet
- */
-function generarId() {
-    let incidenciaDatos = [];
-
-    try {
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
-        if (listaRecuperada !== null) {
-            incidenciaDatos = listaRecuperada;
-        }
-    } catch (error) {
-        let incidenciaDatos = [];
-    }
-
-    const idNumerico = parseInt(incidenciaDatos.length + 1);
-    let id = "";
-    for (let i = 0; i < 6-idNumerico.toString().length; i++) {
-        id += 0;
-    }
-    id += idNumerico;
-
-    return id;
 }
