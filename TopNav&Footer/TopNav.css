@@ -4,7 +4,7 @@ body {
 }
 
 .containerNav {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(250, 250, 250);
     border-bottom: 1px solid rgb(0, 0, 0);
     font-family: Open Sans, arial, sans-serif;
     color: black;
@@ -16,7 +16,7 @@ body {
     z-index: 1;
     padding: 16px;
     font-size: 15px;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(250, 250, 250);
     position: fixed;
     width: 100%;
     border-bottom: 1px solid rgb(0, 0, 0);
@@ -68,7 +68,7 @@ body {
 
 .menu-lateral {
     margin-top: 64px;
-    background-color: rgb(236, 236, 236);
+    background-color:  rgb(250, 250, 250);
     position: fixed;
     width: 250px;
     text-align: justify;
@@ -146,29 +146,49 @@ body {
 @media (max-width: 952px) {}
 
 @media (max-width: 658px) {
-    .logo .username {
-        display: none;
-    }
-
-    .menu-superior .listaMenu {
+    .header{
         font-size: 10px;
-        margin-left: 5%;
-    }
-
-    .menu-superior .listaMenu .contenidoLista {
         padding: 8px;
     }
+    .menu-superior .listaMenu {
+        margin-left: 0%;        
+    }    
 
     .listaMenu .contenidoLista .link {
         padding: 0px;
-    }
-
-    .logo {
-        font-size: 10px;
+        padding-right: 10px;
     }
 
     .menu-superior {
         margin-left: 5%;
     }
+
+    #goToEnglish{
+        padding-left: 10px;
+    }
+
+    #separador{
+        padding-right: 10px;
+    }
+
+    .menu-lateral {
+        justify-content: center;
+        margin-top: 48px;
+        position: fixed;
+        width: 100%;
+        text-align: justify;
+        display: flex;
+        height: 15%;
+        border: 1px solid rgb(0, 0, 0);
+
+    }
+
+    .listaLateral{
+        padding-top: 8px;
+        text-align: left;
+        font-size: 20px;
+        text-align: center;
+    }
+
 }
 
