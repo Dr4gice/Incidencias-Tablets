@@ -7,8 +7,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estadoTablets.css">
     <link rel="stylesheet" href="../TopNav&Footer/TopNav.css">
-    <title>Estado de Tablets</title>
+    <link rel="stylesheet" href="../TopNav&Footer/Footer.css">
+    <script src="https://kit.fontawesome.com/2a9d472dd5.js" crossorigin="anonymous"></script>
+    <title>Estados de las tablets</title>
 </head>
+
 <body>
-    
+
+    <div class="containerNav">
+        <div class="header">
+            <button class="boton">
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+            </button>
+
+            <div class="logo">
+                <div class="icon"></div>
+                <span class="userName"></span>
+
+            </div>
+            <nav class="menu-superior">
+                <ul class="listaMenu">
+                    <li class="contenidoLista"><a class="link" target="_top" id="goLogIn">Iniciar Sesion</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goSignIn">Crear Cuenta</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToFaq"
+                            href="../Faq/FaqPage.html">FAQ</a></li>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToGit"
+                            href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a></li> |
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish"
+                            href="../Traducciones/index.html">English</a></li>
+                </ul>
+            </nav>
+            <nav class="menu-lateral">
+                <ul>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                            href="../CrearIncidencias/nuevaInci.html">Crear indicidencias</a></li>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                            href="../EstadoIncidencias/estadoIncidencia.html">Administrar Incidencias</a></li>
+                    <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                            href="../EstadoTablets/estadoTablets.html">Comprobar Tablets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="main">
+        <div class="cont">
+            <div class="title">
+                Estados de las tablets
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tableTitle" rowspan="2">DNI</th>
+                        <th class="tableTitle" rowspan="2">ID Tablet</th>
+                        <th class="tableTitle" rowspan="2">Marca</th>
+                        <th class="tableTitle" colspan="3">Accesorios</th>
+                        <th class="tableTitle" rowspan="2">Estado</th>
+                    </tr>
+
+                    <tr>
+                        <th class="tableTitle">Cargador</th>
+                        <th class="tableTitle">Funda</th>
+                        <th class="tableTitle">Protector</th>
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    <!-- 
+                    <tr>
+                        HTML
+                        <td class="tableTextRow" id="DNI">012345678Z</td>
+                        <td class="tableTextRow" id="IDTablet">100</td>
+                        <td class="tableTextRow" id="Marca">Motorola</td>
+                        <td class="tableBoolRow" id="CargadorB"></td>
+                        <td class="tableBoolRow" id="FundaB"></td>
+                        <td class="tableBoolRow" id="ProtectorB"></td>
+                        <td class="tableBoolRow" id="EstadoB"></td>
+
+                        CSS
+                        #FundaB{
+                            background-color: rgb(238, 67, 67);
+                            border-radius: 100px; 
+                        }
+
+                        #CargadorB{
+                            background-color: rgb(117, 214, 72);
+                            border-radius: 100px;    
+                        }
+                    </tr>  
+                    -->                  
+                </tbody>
+            </table>
+
+            <br>
+            <a class="link" id="volverPagPrinc" href="../index.html">Volver Menú principal</a>
+        </div>
+    </div>
+
+    <script src="../TopNav&Footer/TopNav.js"></script>
+    <script src="../Funciones/funciones.js"></script>
+    <script src="estadoIncidencia.js"></script>
+
+    <footer>
+        <div class="containerFoot">
+            <div>
+                <div class="col-md-4Foot ">
+                    <h4 class="tituloFoot ">Servicio</h4>
+
+                    <p class="subtituloFoot ">C. Manuel Sanchis Guarner, 5<br>03330 Crevillent, Alicante</p>
+                    <p class="subtituloFoot ">Soporte: 420 66 69 00</p>
+
+                </div>
+            </div>
+            <div>
+                <div class="col-md-4Foot ">
+                    <h4 class="tituloFoot ">Redes Sociales</h4>
+                    <ul class="social-mediaFoot ">
+                        <li class="listaRedesFoot "><a class="linkFoot iconLink"
+                                href="https://www.youtube.com/?hl=es"><i class="fab  fa-youtube"></i></a></li>
+                        <li class="listaRedesFoot "><a class="linkFoot iconLink"
+                                href="https://github.com/Dr4gice/Incidencias-Tablets"><i class="fab fa-github"></i></a>
+                        </li>
+                        <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://twitter.com/?lang=es"><i
+                                    class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-12Foot">
+                    <p>&copy; 2023 TechPad. Desarrollado por TechMaster. <a class="linkFoot "
+                            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Aviso de Privacidad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 </body>
+
+</html>
