@@ -70,9 +70,6 @@ label {
 }
 
 /* Tipo de problema */
-#otrosProblemas{
-    display: none;
-}
 
 select {
     transition: background-color 200ms ease;
@@ -82,6 +79,7 @@ select {
     padding: 5px;
     padding-left: 7px;
     color: white;
+    width: 40%;
 }
 
 select:hover {

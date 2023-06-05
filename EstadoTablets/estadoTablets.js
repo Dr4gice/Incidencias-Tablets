@@ -6,7 +6,7 @@ const nombreUsuario = document.querySelector(".userName");
 const icono = document.querySelector('.icon');
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-const carpetaLogin = "InicioSesion/";
+const carpetaLogin = "../InicioSesion/";
 const registroArchivo = "newAcc.html";
 const loginArchivo = "signIn.html";
 

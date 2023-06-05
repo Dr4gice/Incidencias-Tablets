@@ -34,77 +34,62 @@ botonLogin.addEventListener('click', function () {
 iniciadoSesion();
 
 
-// Mostrar las filas en la tabla
-document.addEventListener("DOMContentLoaded", function () {
-    let filasGuardadas = localStorage.getItem("filas");
-    let todasLasFilas;
+let incidenciaDatos = [];
 
-    if (filasGuardadas) {
-        filasGuardadas = JSON.parse(filasGuardadas);
-        todasLasFilas = filasGuardadas;
-        mostrarFilas(filasGuardadas);
+try {
+    let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+    if (listaRecuperada !== null) {
+        incidenciaDatos = listaRecuperada;
     }
+} catch (error) {
+    let incidenciaDatos = [];
+}
 
-    // Botón de buscar un problema
-    btnBuscar.addEventListener("click", function () {
-        const problemaBusqueda = document.getElementById("problemaBusqueda").value.toLowerCase();
-        const filas = document.querySelectorAll("#miTabla tbody tr");
+mostrarFilas(incidenciaDatos);
 
-        filas.forEach(function (fila) {
-            const tipoProblem = fila.querySelector("td:nth-child(2)").textContent.toLowerCase();
+// Botón de borrar una incidencia
+for (let i = 0; i < btnBorrar.length; i++) {
+    btnBorrar[i].addEventListener("click", function () {
 
-            if (tipoProblem.includes(problemaBusqueda)) {
-                fila.style.display = "table-row";
-            } else {
-                fila.style.display = "none";
-            }
+        const fila = this.closest("tr");
+        const idIncidencia = fila.querySelector("td:nth-child(1)").textContent.toLowerCase();
+        incidenciaEncontrada = incidenciaDatos.find(incidencia => incidencia.incidencia.id === idIncidencia);
+        nuevoIncidenciaDatos = incidenciaDatos.filter(function (incidencia) {
+            return incidencia !== incidenciaEncontrada;
         });
+
+        localStorage.setItem("listaIncidencias", JSON.stringify(nuevoIncidenciaDatos));
+        location.reload();
     });
+}
 
 
-    // Botón de borrar una incidencia
-    for (let i = 0; i < btnBorrar.length; i++) {
-        btnBorrar[i].addEventListener("click", function () {
-            const filaAborrar = this.parentNode.parentNode;
-            const tbody = filaAborrar.parentNode;
+function mostrarFilas(listaIncidencias) {
+    const tabla = document.getElementById("miTabla");
+    const tbody = tabla.tBodies[0];
 
-            const indice = Array.prototype.indexOf.call(tbody.children, filaAborrar);
-            todasLasFilas.splice(indice, 1);
+    tbody.innerHTML = "";
 
-            localStorage.setItem("filas", JSON.stringify(todasLasFilas));
+    for (let i = 0; i < listaIncidencias.length; i++) {
+        const fila = document.createElement("tr");
+        const celdaidInci = document.createElement("td");
+        const celdaTipoInci = document.createElement("td");
+        const celdaFecha = document.createElement("td");
+        const celdaAcciones = document.createElement("td");
+        const btnBorrar = document.createElement("button");
 
-            tbody.removeChild(filaAborrar);
-        });
+        celdaidInci.textContent = listaIncidencias[i].incidencia.id;
+        celdaTipoInci.textContent = listaIncidencias[i].incidencia.tipoIncidencia;
+        celdaFecha.textContent = listaIncidencias[i].incidencia.fecha;
+        btnBorrar.textContent = "Borrar";
+
+        btnBorrar.classList.add("btnBorrar");
+
+        fila.appendChild(celdaidInci);
+        fila.appendChild(celdaTipoInci);
+        fila.appendChild(celdaFecha);
+        celdaAcciones.appendChild(btnBorrar);
+        fila.appendChild(celdaAcciones);
+        tbody.appendChild(fila);
     }
-
-    // Función que muestra las filas de la tabla
-    function mostrarFilas(filas) {
-        const tabla = document.getElementById("miTabla");
-        const tbody = tabla.tBodies[0];
-
-        tbody.innerHTML = "";
-
-        for (let i = 0; i < filas.length; i++) {
-            const fila = document.createElement("tr");
-            const celdaidInci = document.createElement("td");
-            const celdaTipoInci = document.createElement("td");
-            const celdaFecha = document.createElement("td");
-            const celdaAcciones = document.createElement("td");
-            const btnBorrar = document.createElement("button");
-
-            celdaidInci.textContent = filasGuardadas[i].numeroID;
-            celdaTipoInci.textContent = filasGuardadas[i].tipoInciden;
-            celdaFecha.textContent = filasGuardadas[i].fecha;
-            btnBorrar.textContent = "Borrar";
-
-            btnBorrar.classList.add("btnBorrar");
-
-            fila.appendChild(celdaidInci);
-            fila.appendChild(celdaTipoInci);
-            fila.appendChild(celdaFecha);
-            celdaAcciones.appendChild(btnBorrar);
-            fila.appendChild(celdaAcciones);
-            tbody.appendChild(fila);
-        }
-    }
-});
+}
