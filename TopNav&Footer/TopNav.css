@@ -13,6 +13,7 @@ body {
 
 .header {
     display: flex;
+    z-index: 1;
     padding: 16px;
     font-size: 15px;
     background-color: rgb(236, 236, 236);

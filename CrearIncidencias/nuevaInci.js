@@ -56,13 +56,13 @@ botonIncidencia.addEventListener("click", function () {
 /**
  * Campo adicional de la selección de problemas
  */
-function mostrarCampoAdicional() {
-    if (tipoInci.value === "Otro") {
-        otrosProblemas.style.display = "block";
-    } else {
-        otrosProblemas.style.display = "none";
-    }
-}
+// function mostrarCampoAdicional() {
+//     if (tipoInci.value === "Otro") {
+//         otrosProblemas.style.display = "block";
+//     } else {
+//         otrosProblemas.style.display = "none";
+//     }
+// }
 
 /**
  * Añade a la lista de incidencias los datos de una nueva incidencia
@@ -106,7 +106,7 @@ function agregarIncidencia() {
         nif: dniUsuarioLogged,
         incidencia: {
             id: idIncidencia,
-            tipoIncidencia: tipoIncidencia.value,
+            tipoIncidencia: tipoIncidencia.value.toLowerCase(),
             problema: problema.value,
             fecha: timestampActual
         }
@@ -133,7 +133,11 @@ function generarId() {
     }
 
     const idNumerico = parseInt(incidenciaDatos.length + 1);
-    let id = "" + idNumerico;
+    let id = "";
+    for (let i = 0; i < 6-idNumerico.toString().length; i++) {
+        id += 0;
+    }
+    id += idNumerico;
 
     return id;
 }
