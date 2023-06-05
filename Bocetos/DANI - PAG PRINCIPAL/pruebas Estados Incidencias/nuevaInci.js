@@ -104,7 +104,6 @@ document.getElementById("crearInci").addEventListener("submit", function (event)
         const datos = {
             numeroID: idInci,
             tipoInciden: tipoInci,
-            estado: "abierto",
             fecha: new Date().toLocaleString()
         };
 

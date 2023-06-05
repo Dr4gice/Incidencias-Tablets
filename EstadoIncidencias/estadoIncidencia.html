@@ -29,8 +29,8 @@
             </div>
             <nav class="menu-superior">
                 <ul class="listaMenu">
-                    <li class="contenidoLista"><a class="link" target="_top" id="goLogIn">Iniciar Sesion</a>
-                    <li class="contenidoLista"><a class="link" target="_top" id="goSignIn">Crear Cuenta</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goLogIn" href="../InicioSesion/signIn.html">Iniciar Sesion</a>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goSignIn" href="../InicioSesion/newAcc.html">Crear Cuenta</a>
                     <li class="contenidoLista"><a class="link" target="_top" id="goToFaq" href="../Faq/FaqPage.html">FAQ</a></li>
                     <li class="contenidoLista"><a class="link" target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a></li> |
                     <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish" href="../Traducciones/index.html">English</a></li>
@@ -52,34 +52,24 @@
                 Estados de las incidencias
             </div>
 
-            <table>
+            <label for="problemaBusqueda">Buscar por nombre problema:</label>
+            <input type="text" id="problemaBusqueda">
+            <button id="btnBuscar">Buscar</button>
+
+            <br>
+            <br>
+
+            <table id="miTabla">
                 <thead>
                     <tr>
-                        <th>Id incidencia</th>
-                        <th>Problema</th>
-                        <th>Estado</th>
-                        <th>Fecha</th>
+                        <th width="20%">Id incidencia</th>
+                        <th width="40%">Problema</th>
+                        <th width="20%">Fecha</th>
+                        <th width="20%">Eliminar Incidencia</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> 0123212 </td>
-                        <td width: 50%;> Problemas de rendimiento </td>
-                        <td> <span></span> Abierto </td>
-                        <td> 3/12/2002 </td>
-                    </tr>
-                    <tr>
-                        <td> 0123879 </td>
-                        <td width: 50%;> Problemas de almacenamiento del dispositivo </td>
-                        <td> <span></span> En reparación </td>
-                        <td> 3/12/2002 </td>
-                    </tr>
-                    <tr>
-                        <td> 0212347 </td>
-                        <td width: 50%;> Problemas con la conexion a Internet </td>
-                        <td> <span></span> Cerrado </td>
-                        <td> 3/12/2002 </td>
-                    </tr>
+                    <!-- Filas de datos aquí -->
                 </tbody>
             </table>
 
@@ -87,6 +77,7 @@
             <a class="link" id="volverPagPrinc" href="../index.html">Volver Menú principal</a>
         </div>
     </div>
+    
     <script src="../Funciones/funciones.js"></script>
     <script src="estadoIncidencia.js"></script>
 
