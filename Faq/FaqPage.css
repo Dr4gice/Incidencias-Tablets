@@ -4,14 +4,15 @@
 @import url(https://fonts.googleapis.com/css?family=OpenSans);
 
 body {
-    display: flex;
+
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-image: url("../Imagenes/fondo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+
 }
 
 .faq-heading {
@@ -34,7 +35,7 @@ body {
 
 .faq {
     width: 1000px;
-    margin: 0 auto;
+    margin: 150px auto ;
     background: white;
     border-radius: 4px;
     position: relative;
@@ -85,3 +86,9 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
+.container {
+    background-color: rgb(212, 212, 212);
+    border-bottom: 3px solid rgb(0, 0, 0);
+}
+
