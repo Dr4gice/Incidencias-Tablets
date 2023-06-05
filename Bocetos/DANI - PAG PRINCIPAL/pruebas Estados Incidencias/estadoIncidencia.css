@@ -28,7 +28,7 @@ body {
     border-radius: 10px;
     box-shadow: 70px 70px 250px 120px rgb(0, 0, 0);
     padding: 30px;
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 
@@ -50,6 +50,24 @@ td {
 
 table {
     width: 100%;
+}
+
+/* Botón de borrar una incidencia */
+.btnBorrar{
+    transition: background-color 200ms ease;
+    background-color: red;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+    font-weight: bold;
+}
+
+.btnBorrar:hover {
+    transition: background-color 350ms ease;
+    background-color: #a30202;
+    cursor: pointer;
 }
 
 /* Botón de Volver al Menu Principal */
