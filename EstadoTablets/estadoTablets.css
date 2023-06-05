@@ -37,7 +37,7 @@ body {
     color: #080808;
 }
 
-table, th{
+table, th, td {
     background-color: none;
     border: 1px solid black;
     vertical-align: center;
@@ -61,6 +61,3 @@ table {
     padding-left: 10px;
     padding-right: 10px;
 }
-
-
-

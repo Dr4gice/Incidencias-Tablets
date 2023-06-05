@@ -14,23 +14,18 @@ try {
     let usuarioDatos = [];
 }
 
-mostrarFilas(usuarioDatos);
+let incidenciaDatos = [];
 
-// Botón de borrar una incidencia
-for (let i = 0; i < btnBorrar.length; i++) {
-    btnBorrar[i].addEventListener("click", function () {
-
-        const fila = this.closest("tr");
-        const idIncidencia = fila.querySelector("td:nth-child(1)").textContent.toLowerCase();
-        usuarioEncontrado = usuarioDatos.find(usuario => usuario.nif === idIncidencia);
-        nuevoIncidenciaDatos = incidenciaDatos.filter(function (incidencia) {
-            return incidencia !== incidenciaEncontrada;
-        });
-
-        localStorage.setItem("listaUsuarios", JSON.stringify(nuevoIncidenciaDatos));
-        location.reload();
-    });
+try {
+    let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+    if (listaRecuperada !== null) {
+        incidenciaDatos = listaRecuperada;
+    }
+} catch (error) {
+    let incidenciaDatos = [];
 }
+
+mostrarFilas(usuarioDatos);
 
 
 function mostrarFilas(listaUsuarios) {
@@ -41,24 +36,54 @@ function mostrarFilas(listaUsuarios) {
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         const fila = document.createElement("tr");
-        const celdaidInci = document.createElement("td");
-        const celdaTipoInci = document.createElement("td");
-        const celdaFecha = document.createElement("td");
-        const celdaAcciones = document.createElement("td");
-        const btnBorrar = document.createElement("button");
+        const celdaDniUser = document.createElement("td");
+        const celdaIdTablet = document.createElement("td");
+        const celdaMarcaTablet = document.createElement("td");
+        const celdaCargadorTablet = document.createElement("td");
+        const celdaFundaTablet = document.createElement("td");
+        const celdaProtectorTablet = document.createElement("td");
+        const estadoTablet = document.createElement("td");
 
-        celdaidInci.textContent = listaUsuarios[i].incidencia.id;
-        celdaTipoInci.textContent = listaUsuarios[i].incidencia.tipoIncidencia;
-        celdaFecha.textContent = listaUsuarios[i].incidencia.fecha;
-        btnBorrar.textContent = "Borrar";
+        celdaDniUser.textContent = listaUsuarios[i].nif;
+        celdaDniUser.style.padding = "5px";
+        celdaIdTablet.textContent = listaUsuarios[i].tablet.id;
+        celdaIdTablet.style.padding = "5px";
+        celdaMarcaTablet.textContent = listaUsuarios[i].tablet.marca;
+        celdaMarcaTablet.style.padding = "5px";
 
-        btnBorrar.classList.add("btnBorrar");
+        if (listaUsuarios[i].tablet.accesorios.cargador === true) {
+            celdaCargadorTablet.style.backgroundColor = "rgb(117, 214, 72)";
+        } else {
+            celdaCargadorTablet.style.backgroundColor = "rgb(238, 67, 67)";
+        }
 
-        fila.appendChild(celdaidInci);
-        fila.appendChild(celdaTipoInci);
-        fila.appendChild(celdaFecha);
-        celdaAcciones.appendChild(btnBorrar);
-        fila.appendChild(celdaAcciones);
+        if (listaUsuarios[i].tablet.accesorios.funda === true) {
+            celdaFundaTablet.style.backgroundColor = "rgb(117, 214, 72)";
+        } else {
+            celdaFundaTablet.style.backgroundColor = "rgb(238, 67, 67)";
+        }
+
+        if (listaUsuarios[i].tablet.accesorios.protectorDePantalla === true) {
+            celdaProtectorTablet.style.backgroundColor = "rgb(117, 214, 72)";
+        } else {
+            celdaProtectorTablet.style.backgroundColor = "rgb(238, 67, 67)";
+        }
+
+        const incidenciaEncontrada = incidenciaDatos.find(incidencia => incidencia.nif === celdaDniUser.textContent);
+        console.log(incidenciaEncontrada);
+        if (incidenciaEncontrada) {
+            estadoTablet.style.backgroundColor = "rgb(238, 67, 67)";
+        } else {
+            estadoTablet.style.backgroundColor = "rgb(117, 214, 72)";
+        }
+
+        fila.appendChild(celdaDniUser);
+        fila.appendChild(celdaIdTablet);
+        fila.appendChild(celdaMarcaTablet);
+        fila.appendChild(celdaCargadorTablet);
+        fila.appendChild(celdaFundaTablet);
+        fila.appendChild(celdaProtectorTablet);
+        fila.appendChild(estadoTablet);
         tbody.appendChild(fila);
     }
 }

@@ -50,7 +50,7 @@ function mostrarFilas(listaIncidencias) {
         celdaidInci.textContent = listaIncidencias[i].incidencia.id;
         celdaTipoInci.textContent = listaIncidencias[i].incidencia.tipoIncidencia;
         celdaFecha.textContent = listaIncidencias[i].incidencia.fecha;
-        btnBorrar.textContent = "Borrar";
+        btnBorrar.textContent = "X";
 
         btnBorrar.classList.add("btnBorrar");
 
