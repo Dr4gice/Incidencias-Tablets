@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./paginaPrincipal/index.css">
     <link rel="stylesheet" href="TopNav&Footer/TopNav.css">
+    <link rel="stylesheet" href="./paginaPrincipal/tabletcambiante.css">
     <title>Página Principal</title>
 </head>
+
 <body>
     <div class="containerNav">
         <div class="header">
@@ -26,23 +29,65 @@
                 <ul class="listaMenu">
                     <li class="contenidoLista"><a class="link" target="_top" id="goLogIn">Iniciar Sesion</a>
                     <li class="contenidoLista"><a class="link" target="_top" id="goSignIn">Crear Cuenta</a>
-                    <li class="contenidoLista"><a class="link" target="_top" id="goToFaq" href="Faq/FaqPage.html">FAQ</a></li>
-                    <li class="contenidoLista"><a class="link" target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a></li> |
-                    <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish" href="Traducciones/index.html">English</a></li>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToFaq"
+                            href="Faq/FaqPage.html">FAQ</a></li>
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToGit"
+                            href="https://github.com/Dr4gice/Incidencias-Tablets">Contacto</a></li> |
+                    <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish"
+                            href="Traducciones/index.html">English</a></li>
                 </ul>
             </nav>
-            
+
         </div>
 
         <nav class="menu-lateral">
             <ul>
-                <li class="contenidoLista listaLateral"><a class="link" target="_top" href="CrearIncidencias/nuevaInci.html">Crear indicidencias</a></li>
-                <li class="contenidoLista listaLateral"><a class="link" target="_top" href="EstadoIncidencias/estadoIncidencia.html">Administrar Incidencias</a></li>
-                <li class="contenidoLista listaLateral"><a class="link" target="_top" href="EstadoTablets/estadoTablets.html">Comprobar Tablets</a></li>
+                <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                        href="CrearIncidencias/nuevaInci.html">Crear indicidencias</a></li>
+                <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                        href="EstadoIncidencias/estadoIncidencia.html">Administrar Incidencias</a></li>
+                <li class="contenidoLista listaLateral"><a class="link" target="_top"
+                        href="EstadoTablets/estadoTablets.html">Comprobar Tablets</a></li>
             </ul>
         </nav>
-    </div> 
+    </div>
+
+
+    <div class="tarjeta" id="tarjeta1">
+        <h2 class="titulo">Tablet Samsung Galaxy Tab S7 FE 64GB Negro
+            <p class="descripcion">Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de
+                tus actividades. El diseño delgado, compacto y portátil.</p>
+
+        </h2>
+        <div class="image-container">
+            <img class="image" src="./Imagenes/tablet1.png" alt="">
+            <div class="arrow prev" onclick="changeTarjeta(-1)">&#10094;</div>
+            <div class="arrow next" onclick="changeTarjeta(1)">&#10095;</div>
+        </div>
+
+        <!-- Agrega más información aquí -->
+    </div>
+
+    <div class="tarjeta" id="tarjeta2" style="display: none;">
+        <h2 class="titulo">Toshiba Portégé Z20T-C-13Q 12" Core m5 1,1 GHz - SSD 256 GB - 8GB Teclado francés <p
+                class="descripcion">Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de
+                tus actividades. El diseño delgado, compacto y portátil.</p>
+        </h2>
+
+
+        <div class="image-container">
+            <img class="image" src="./Imagenes/tablet2.png" alt="">
+            <div class="arrow prev" onclick="changeTarjeta(-1)">&#10094;</div>
+            <div class="arrow next" onclick="changeTarjeta(1)">&#10095;</div>
+        </div>
+
+        <!-- Agrega más información aquí -->
+    </div>
+
+
     <script src="Funciones/funciones.js"></script>
     <script src="./TopNav&Footer/TopNav.js"></script>
+    <script src="./paginaPrincipal/tabletcambiante.js"></script>
 </body>
+
 </html>

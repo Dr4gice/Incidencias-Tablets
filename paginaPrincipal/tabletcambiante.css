@@ -1,0 +1,96 @@
+.tarjeta {
+  width: 1700px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.titulo {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 25);
+  font-weight: bold;
+  padding-right: 80px;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 25);
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  margin-bottom: 20px;
+  font-size: 15px;
+
+}
+
+.precio {
+  font-size: 24px;
+  color: #e60000;
+  font-weight: bold;
+}
+
+
+
+.arrow {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow.prev {
+  left: 0px;
+}
+
+.arrow.next {
+  right: 0px;
+}
+
+.image {
+  max-width: 2000px;
+  height: 700px;
+}
+
+@keyframes brillo {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+    background-size: 600% 600%;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

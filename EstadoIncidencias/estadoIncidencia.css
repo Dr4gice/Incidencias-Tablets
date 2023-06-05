@@ -52,14 +52,13 @@ table {
 
 
 /* Botón de borrar una incidencia */
-.btnBorrar{
+.btnBorrar {
     transition: background-color 200ms ease;
     background-color: red;
-    color:white;
+    color: white;
     border: none;
-    border-radius: 5px;
     padding: 5px;
-    width: 30%;
+    width: 100%;
     font-weight: bold;
 }
 
@@ -88,4 +87,65 @@ table {
     text-shadow: 0px 0px 30px black;
     transition: 250ms ease;
     cursor: pointer;
+}
+
+
+
+/* Vista del movil */
+@media (max-width: 658px) {
+
+    #main {
+        height: 1000px;
+        width: auto;
+        padding: 10px;
+    }
+
+    .cont {
+        margin-top: 120px;
+        margin-bottom: 70px;
+        width: 400px;
+        box-shadow: 20px 20px 150px 60px rgb(0, 0, 0);
+    }
+
+    .title, td, th{
+        font-size: 14px;
+    }
+
+    td{
+        padding: 5px;
+    }
+
+    th {
+        width: 0%;
+    }
+
+}
+
+
+
+/* Vista del movil  */
+@media (max-width: 400px) {
+
+    #main {
+        height: auto;
+        width: auto;
+        padding: 10px;
+    }
+
+    .cont {
+        margin-top: 120px;
+        margin-bottom: 70px;
+        width: auto;
+        width: 50%;
+        box-shadow: 20px 20px 150px 60px rgb(0, 0, 0);
+    }
+
+    table{
+        width: 10px;
+    }
+
+    th {
+        width: 0%;
+    }
+
 }

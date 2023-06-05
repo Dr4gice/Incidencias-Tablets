@@ -133,3 +133,36 @@ option {
     transition: 250ms ease;
     cursor: pointer;
   }
+
+  
+/* Vista del movil */
+@media (max-width: 658px){
+
+    #main{
+        height: 1000px;
+        width: auto;
+    }
+
+    .cont{
+        margin-top: 120px;
+        margin-bottom: 70px;
+        width: auto;
+        box-shadow: 20px 20px 150px 60px rgb(0, 0, 0);
+    }
+
+    .title, .tipoInci, .prob{
+        font-size: 14px;
+    }
+
+    #nuevaIncidencia{
+        font-size: 11px;
+    }
+    .tipoInci{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #tipoInci{
+        width: 70%;
+    }
+}
