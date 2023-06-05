@@ -1,37 +1,6 @@
-const nav = document.querySelector('.menu-lateral');
-const boton = document.querySelector('.boton');
-const botonRegistro = document.getElementById('goSignIn');
-const botonLogin = document.getElementById('goLogIn');
-const nombreUsuario = document.querySelector(".userName");
-const icono = document.querySelector('.icon');
-const isLoggedIn = localStorage.getItem('isLoggedIn');
-
 /* Botones para la tabla */
 const btnBuscar = document.getElementById("btnBuscar");
 const btnBorrar = document.getElementsByClassName("btnBorrar");
-
-const carpetaLogin = "InicioSesion/";
-const registroArchivo = "newAcc.html";
-const loginArchivo = "signIn.html";
-
-// Abrir y Cerrar el Menú Lateral
-boton.addEventListener('click', function () {
-    if (isLoggedIn === 'true') {
-        nav.classList.toggle('active');
-    }
-});
-
-// Botón de Registro, redirigir
-botonRegistro.addEventListener('click', function () {
-    cerradoSesion();
-});
-
-// Botón de Iniciar Sesión, redirigir
-botonLogin.addEventListener('click', function () {
-    location.href = carpetaLogin + loginArchivo;
-});
-
-iniciadoSesion();
 
 
 let incidenciaDatos = [];
@@ -81,7 +50,7 @@ function mostrarFilas(listaIncidencias) {
         celdaidInci.textContent = listaIncidencias[i].incidencia.id;
         celdaTipoInci.textContent = listaIncidencias[i].incidencia.tipoIncidencia;
         celdaFecha.textContent = listaIncidencias[i].incidencia.fecha;
-        btnBorrar.textContent = "Borrar";
+        btnBorrar.textContent = "X";
 
         btnBorrar.classList.add("btnBorrar");
 
