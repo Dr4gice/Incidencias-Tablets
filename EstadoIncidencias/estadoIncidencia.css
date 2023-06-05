@@ -22,12 +22,11 @@ body {
 
 .cont {
     margin-top: 50px;
-    /* background-color: #f7f7f7; */
     background-color: rgb(212, 212, 212);
     border-radius: 10px;
     box-shadow: 70px 70px 250px 120px rgb(0, 0, 0);
     padding: 30px;
-    width: 60%;
+    width: 900px;
     text-align: center;
 }
 
@@ -51,19 +50,20 @@ table {
     width: 100%;
 }
 
-/* Botón de eliminar incidencia */
-#eliminarIncidencia{
+
+/* Botón de borrar una incidencia */
+.btnBorrar{
     transition: background-color 200ms ease;
     background-color: red;
     color:white;
     border: none;
     border-radius: 5px;
-    width: 30%;
     padding: 5px;
+    width: 30%;
     font-weight: bold;
 }
 
-#eliminarIncidencia:hover {
+.btnBorrar:hover {
     transition: background-color 350ms ease;
     background-color: #a30202;
     cursor: pointer;
