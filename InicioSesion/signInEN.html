@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Log In</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="signIn.css">
+</head>
+
+<body>
+  <div class="contains">
+    <div class="title">
+      Log In
+    </div>
+
+    <div class="signIn">
+
+      <form>
+        <input type="text" id="LogDNI" name="LogDNI" placeholder="DNI:" required>
+        <br>
+        <input type="password" id="LogPasswd" name="LogPasswd" placeholder="Password:" required>
+        <br>
+        <span id="wrongPasswordError" style="color: rgb(113, 6, 6);"></span>
+        <br>
+        <button type="button" id="sendSignIn">Log In</button>
+      </form>
+
+      <a id="createNewAccount" href="newAccEN.html">No account?</a>
+      <a id="goFrontPage" href="../indexEN.html">Homepage</a>
+
+    </div>
+  </div>
+
+  <script src="../Funciones/funciones.js"></script>
+  <script src="signInEN.js"></script>
+</body>
+
+</html>
