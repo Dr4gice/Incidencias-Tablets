@@ -8,30 +8,30 @@ const errorEmail = document.getElementById("emailError");
 const errorConfirmarContrasenya = document.getElementById("confirmPasswordError");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
 
-const principalArchivo = "../index.html";
+const principalArchivo = "../indexEN.html";
 contrasenya.addEventListener("input", comprobarContrasenya);
 confirmarContrasenya.addEventListener("input", comprobarContrasenya);
 
 // Comprueba si los campos están vacíos. Si están vacíos muestra mensaje de error, en caso contrario se registra el usuario
 botonRegistro.addEventListener('click', async function () {
     if (usuario.value === "" || email.value === "" || contrasenya.value === "" || confirmarContrasenya.value === "" || tipoCliente.value === "Elige") {
-        errorCamposVacios.textContent = "Completa todos los campos";
+        errorCamposVacios.textContent = "Fill all fields";
     } else {
         if (!comprobarDNI(usuario.value.toUpperCase())) {
             usuario.value = "";
-            errorCamposVacios.textContent = "Formato DNI incorrecto";
+            errorCamposVacios.textContent = "Wrong DNI format";
             return;
         }
 
         if (comprobarNifBD(usuario.value)) {
             usuario.value = "";
-            errorCamposVacios.textContent = "Usuario ya existente";
+            errorCamposVacios.textContent = "User already exists";
             return;
         }
 
         if (!comprobarEmail(email.value)) {
             email.value = "";
-            errorCamposVacios.textContent = "Formato Email incorrecto";
+            errorCamposVacios.textContent = "Wrong EMAIL format";
             return;
         }
 

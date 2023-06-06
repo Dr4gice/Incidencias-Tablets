@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sign In</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="newAcc.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      Sign In 
+    </div>
+
+    <div class="signInBox">
+      <form>
+
+        <input type="text" id="username" name="username" placeholder="DNI:" required>
+        <br>
+        <input type="email" id="email" name="email" placeholder="E-MAIL:" required>
+        <br>
+        <input type="password" id="password" name="password" placeholder="Password:" required>
+        <br>
+        <input type="password" id="ConfPassword" name="ConfPassword" placeholder="Confirm password:" required>
+        <br>
+        <span id="emptyFieldsError" style="color: rgb(113, 6, 6);"></span>
+        <br>
+
+        <label for="userType" class="clientType">User Type:</label>
+        <select name="clientType" id="clientType" required>
+          <option value="Elige" disabled selected hidden>Choose:</option>
+          <option value="Alumno">Student</option>
+          <option value="Profesor">Teacher</option>
+          <option value="Director">Principal</option>
+          <option value="Admin">Admin</option>
+        </select>
+        <br>
+
+        <button type="button" id="sendSignIn">Sign In</button>
+
+      </form>
+      <a id="goLogIn" href="signInEN.html">Already have an account?</a>
+      <a id="goFrontPage" href="../indexEN.html">Homepage</a>
+    </div>   
+  </div>
+
+  <script src="../Funciones/funciones.js"></script>
+  <script src="newAccEN.js"></script>
+</body>
+
+</html>

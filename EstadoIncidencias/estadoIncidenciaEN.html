@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estadoIncidencia.css">
+  <link rel="stylesheet" href="../TopNav&Footer/TopNav.css">
+  <link rel="stylesheet" href="../TopNav&Footer/Footer.css">
+  <script src="https://kit.fontawesome.com/2a9d472dd5.js" crossorigin="anonymous"></script>
+  <title>Manage Tickets</title>
+</head>
+
+<body>
+  <div class="containerNav">
+    <div class="header">
+        <button class="boton">
+            <div class="linea"></div>
+            <div class="linea"></div>
+            <div class="linea"></div>
+        </button>
+
+        <div class="logo">
+            <div class="icon"></div>
+            <span class="userName"></span>
+
+        </div>
+        <nav class="menu-superior">
+            <ul class="listaMenu">
+                <li class="contenidoLista"><a class="link" target="_top" id="goLogIn">Log In</a>
+                <li class="contenidoLista"><a class="link" target="_top" id="goSignIn">Sign In</a>
+                <li class="contenidoLista"><a class="link" target="_top" id="goToFaq" href="../Faq/FaqPageEN.html">FAQ</a></li>
+                <li class="contenidoLista"><a class="link" target="_top" id="goToGit" href="https://github.com/Dr4gice/Incidencias-Tablets">Contact Us</a></li> |
+                <li class="contenidoLista"><a class="link" target="_top" id="goToEnglish" href="estadoIncidencia.html">Español</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../CrearIncidencias/nuevaInciEN.html">New Ticket</a></li>
+            <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../EstadoIncidencias/estadoIncidenciaEN.html">Manage Tickets</a></li>
+            <li class="contenidoLista listaLateral"><a class="link" target="_top" href="../EstadoTablets/estadoTabletsEN.html">Check Tablets</a></li>
+        </ul>
+    </nav>
+</div> 
+
+  <div id="main">
+    <div class="cont">
+      <div class="title">
+        Manage Tickets
+      </div>
+
+      <table id="miTabla">
+        <thead>
+          <tr>
+            <th width="20%">ID Ticket</th>
+            <th width="40%">Problem</th>
+            <th width="20%">Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filas de datos aquí -->
+        </tbody>
+      </table>
+
+      <br>
+      <a class="link" id="volverPagPrinc" href="estadoIncidencia.html">Homepage</a>
+    </div>
+  </div>
+
+  <script src="../Funciones/funciones.js"></script>
+  <script src="../TopNav&Footer/TopNavEN.js"></script>
+  <script src="estadoIncidencia.js"></script>
+
+  <footer>
+    <div class="containerFoot">
+      <div>      
+        <div class="col-md-4Foot ">
+          <h4 class="tituloFoot ">Service</h4>
+  
+          <p class="subtituloFoot ">C. Manuel Sanchis Guarner, 5<br>03330 Crevillent, Alicante</p>
+          <p class="subtituloFoot ">Support: 420 66 69 00</p>
+  
+        </div>
+      </div>
+      <div>
+        <div class="col-md-4Foot ">
+          <h4 class="tituloFoot ">Social Networks</h4>
+          <ul class="social-mediaFoot ">
+            <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://www.youtube.com/?hl=es"><i class="fab  fa-youtube"></i></a></li>
+            <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://github.com/Dr4gice/Incidencias-Tablets"><i class="fab fa-github"></i></a></li>
+            <li class="listaRedesFoot "><a class="linkFoot iconLink" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="col-md-12Foot">
+          <p>&copy; 2023 TechPad. Developed by TechMaster. <a class="linkFoot " href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Notice of Privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
