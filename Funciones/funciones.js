@@ -130,3 +130,29 @@ function generarId(indice) {
 
     return id;
 }
+
+/**
+ * Genera un nombre de usuario aleatorio
+ * @returns {string} Nombre del usuario
+ */
+function generarNombre() {
+    const nombresUsuario = ["crazy", "lazy", "happy", "sunny", "cool", "funny", "mystery", "panda", "dragon", "tiger", "lion", "eagle", "phoenix", "wolf", "fox", "hawk", "unicorn", "wizard", "ghost"];
+    let nombreAleatorio = nombresUsuario[Math.floor(Math.random() * nombresUsuario.length)];
+    for (let i = 0; i < 4; i++) {
+        const numeroAleatorio = Math.floor(Math.random() * 10)
+        nombreAleatorio += numeroAleatorio;
+    }
+
+    return nombreAleatorio;
+}
+
+/**
+ * Genera una marca alatoria
+ * @returns {string} Marca de la tablet
+ */
+function generarMarca() {
+    const nombresMarcas = ["Samsung", "Toshiba"];
+    const marcaAleatoria = nombresMarcas[Math.floor(Math.random() * nombresMarcas.length)];
+
+    return marcaAleatoria;
+}
