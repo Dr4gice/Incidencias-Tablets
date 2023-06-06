@@ -9,6 +9,17 @@ try {
     let usuarioDatos = [];
 }
 
+let incidenciaDatos = [];
+
+try {
+    let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+    if (listaRecuperada !== null) {
+        incidenciaDatos = listaRecuperada;
+    }
+} catch (error) {
+    let incidenciaDatos = [];
+}
+
 const listaDni = ["74444420K", "74396012M", "74445347M", "74446531Q", "20085333P"];
 let encontrado = false;
 
@@ -22,7 +33,9 @@ usuarioDatos.forEach(usuario => {
 
 if (!encontrado) {
     let usuarioDatos = [];
+    let incidenciaDatos = [];
     let indiceTablet = 1;
+    let indiceIncidencias = 1;
     listaDni.forEach(async dni => {
 
         try {
@@ -33,6 +46,15 @@ if (!encontrado) {
         } catch (error) {
             let usuarioDatos = [];
         }
+
+        try {
+            let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
+            if (listaRecuperada !== null) {
+                incidenciaDatos = listaRecuperada;
+            }
+        } catch (error) {
+            let incidenciaDatos = [];
+        }
     
         try {
             let indiceRecuperado = localStorage.getItem("indiceTablet");
@@ -41,6 +63,15 @@ if (!encontrado) {
             }
         } catch (error) {
             let indiceTablet = 1;
+        }
+
+        try {
+            let indiceRecuperado = localStorage.getItem("indiceIncidencias");
+            if (indiceRecuperado !== null) {
+                indiceIncidencias = parseInt(indiceRecuperado);
+            }
+        } catch (error) {
+            let indiceIncidencias = 1;
         }
     
         const nombreUsuario = generarNombre();
@@ -63,10 +94,27 @@ if (!encontrado) {
                 }
             }
         }
+
+        const timestampActual = new Date().getTime();
+        const idIncidencia = generarId(indiceIncidencias)
+        const incidenciaJson = {
+            nif: dni,
+            incidencia: {
+                id: idIncidencia,
+                tipoIncidencia: "Rendimiento",
+                problema: "pruebas",
+                fecha: timestampActual
+            }
+        }
     
         indiceTablet += 1;
         usuarioDatos.push(usuarioJson);
         localStorage.setItem("listaUsuarios", JSON.stringify(usuarioDatos));
         localStorage.setItem("indiceTablet", indiceTablet);
+
+        indiceIncidencias += 1;
+        incidenciaDatos.push(incidenciaJson);
+        localStorage.setItem("listaIncidencias", JSON.stringify(incidenciaDatos));
+        localStorage.setItem("indiceIncidencias", indiceIncidencias);
     });
 }

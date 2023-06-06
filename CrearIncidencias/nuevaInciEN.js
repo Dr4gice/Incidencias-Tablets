@@ -13,7 +13,6 @@ botonIncidencia.addEventListener("click", function () {
         errorCamposVacios.textContent = "Fill all fields";
         let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
         incidenciaDatos = listaRecuperada;
-        console.log(incidenciaDatos);
     } else {
         // Comprobar formato DNI
 

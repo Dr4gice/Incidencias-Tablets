@@ -10,9 +10,6 @@ const msgContrasenyaIncorrecta = "DNI o Contraseña incorrectos";
 botonLogin.addEventListener("click", async function () {
     if (nif.value === "" || contrasenya.value === "") { // Comprueba que los campos no estén vacíos
         errorContrasenyaIncorrecta.textContent = "Fill all fields";
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaUsuarios"));
-        usuarioDatos = listaRecuperada;
-        console.log(usuarioDatos);
     } else if (!(await comprobarNifBD(nif.value))) { // Comprueba que el NIF coincida con alguno que esté guardado
         contrasenya.value = "";
         errorContrasenyaIncorrecta.textContent = msgContrasenyaIncorrecta;

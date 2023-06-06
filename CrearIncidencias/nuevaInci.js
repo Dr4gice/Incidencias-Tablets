@@ -11,9 +11,6 @@ const carpetaArchivo = "../EstadoIncidencias/";
 botonIncidencia.addEventListener("click", function () {
     if (tipoIncidencia.value === "" || problema.value === "") {
         errorCamposVacios.textContent = "Completa todos los campos";
-        let listaRecuperada = JSON.parse(localStorage.getItem("listaIncidencias"));
-        incidenciaDatos = listaRecuperada;
-        console.log(incidenciaDatos);
     } else {
         // Comprobar formato DNI
 
