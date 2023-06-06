@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tarjeta de Producto</title>
+  <link rel="stylesheet" href="tabletcambiante.css">
+</head>
+<body>
+    <div class="container">
+        <a class="boton-regreso" href="trabajofinal.html">Regresar</a>
+      </div>
+  <div class="tarjeta" id="tarjeta1">
+    <div class="image-container">
+      <img class="image" src="tablet1.webp" alt="">
+      <div class="arrow prev" onclick="changeTarjeta(-1)">&#10094;</div>
+      <div class="arrow next" onclick="changeTarjeta(1)">&#10095;</div>
+    </div>
+    <h2 class="titulo">Tablet Samsung Galaxy Tab S7 FE 64GB Negro</h2>
+    <p class="descripcion">Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil.</p>
+
+    <!-- Agrega más información aquí -->
+  </div>
+  
+  <div class="tarjeta" id="tarjeta2" style="display: none;">
+    <div class="image-container">
+      <img class="image" src="tablet3.webp" alt="">
+      <div class="arrow prev" onclick="changeTarjeta(-1)">&#10094;</div>
+      <div class="arrow next" onclick="changeTarjeta(1)">&#10095;</div>
+    </div>
+    <h2 class="titulo">4G LTE Tablet 10 Pulgadas Android 10, 4GB RAM 64GB/128GB Octa Core</h2>
+    <p class="descripcion">【4GB RAM+64GB/128 ROM Almacenamiento Escalable】La memoria RAM de 4 GB del tablet le permite ejecutar más programas en segundo plano.</p>
+
+    <!-- Agrega más información aquí -->
+  </div>
+  
+  <div class="tarjeta" id="tarjeta3" style="display: none;">
+    <div class="image-container">
+      <img class="image" src="tablet2.webp" alt="">
+      <div class="arrow prev" onclick="changeTarjeta(-1)">&#10094;</div>
+      <div class="arrow next" onclick="changeTarjeta(1)">&#10095;</div>
+    </div>
+    <h2 class="titulo">Tablet Samsung Galaxy Tab S7 FE 64GB Negro</h2>
+    <p class="descripcion">Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil.</p>
+
+    <!-- Agrega más información aquí -->
+  </div>
+
+  <script>
+    var currentTarjetaIndex = 1;
+
+    function changeTarjeta(n) {
+      var tarjeta1 = document.getElementById("tarjeta1");
+      var tarjeta2 = document.getElementById("tarjeta2");
+      var tarjeta3 = document.getElementById("tarjeta3");
+
+      // Ocultar tarjeta actual
+      if (currentTarjetaIndex === 1) {
+        tarjeta1.style.display = "none";
+      } else if (currentTarjetaIndex === 2) {
+        tarjeta2.style.display = "none";
+      } else {
+        tarjeta3.style.display = "none";
+      }
+
+      // Calcular nuevo índice de tarjeta
+      currentTarjetaIndex += n;
+
+      // Comprobar si se alcanzó el límite de tarjetas
+      if (currentTarjetaIndex > 3) {
+        currentTarjetaIndex = 1;
+      } else if (currentTarjetaIndex < 1) {
+        currentTarjetaIndex = 3;
+      }
+
+      // Mostrar nueva tarjeta
+      if (currentTarjetaIndex === 1) {
+        tarjeta1.style.display = "block";
+      } else if (currentTarjetaIndex === 2) {
+        tarjeta2.style.display = "block";
+      } else {
+        tarjeta3.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
