@@ -8,30 +8,30 @@ const errorEmail = document.getElementById("emailError");
 const errorConfirmarContrasenya = document.getElementById("confirmPasswordError");
 const errorCamposVacios = document.getElementById("emptyFieldsError");
 
-const principalArchivo = "../indexEN.html";
+const principalArchivo = "../index.html";
 contrasenya.addEventListener("input", comprobarContrasenya);
 confirmarContrasenya.addEventListener("input", comprobarContrasenya);
 
 // Comprueba si los campos están vacíos. Si están vacíos muestra mensaje de error, en caso contrario se registra el usuario
 botonRegistro.addEventListener('click', async function () {
     if (usuario.value === "" || email.value === "" || contrasenya.value === "" || confirmarContrasenya.value === "" || tipoCliente.value === "Elige") {
-        errorCamposVacios.textContent = "Fill all fields";
+        errorCamposVacios.textContent = "Rellena todos los campos";
     } else {
         if (!comprobarDNI(usuario.value.toUpperCase())) {
             usuario.value = "";
-            errorCamposVacios.textContent = "Wrong DNI format";
+            errorCamposVacios.textContent = "Formato DNI incorrecto";
             return;
         }
 
         if (comprobarNifBD(usuario.value)) {
             usuario.value = "";
-            errorCamposVacios.textContent = "User already exists";
+            errorCamposVacios.textContent = "Usuario ya existe";
             return;
         }
 
         if (!comprobarEmail(email.value)) {
             email.value = "";
-            errorCamposVacios.textContent = "Wrong EMAIL format";
+            errorCamposVacios.textContent = "Formato EMAIL incorrecto";
             return;
         }
 
@@ -57,7 +57,7 @@ function comprobarContrasenya() {
     } else {
         // Deshabilitar el botón de registro si las contraseñas no coinciden
         botonRegistro.setAttribute("disabled", true);
-        errorCamposVacios.textContent = "Passwords don't match";
+        errorCamposVacios.textContent = "Contaseñas no coinciden";
     }
 }
 

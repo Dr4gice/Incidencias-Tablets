@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('../Imagenes/fondooo.png');
+    background-image: url('../Imagenes/fondo-web.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -14,4 +14,14 @@ body {
 .container {
     background-color: rgb(212, 212, 212);
     border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+@media (max-width: 952px) {}
+
+@media (max-width: 658px) {
+    body {
+        background-image: url('../Imagenes/fondo-movil.png');
+        background-size: auto;
+    }
+
 }

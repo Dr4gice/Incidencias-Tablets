@@ -58,7 +58,7 @@ input {
 
 #sendSignIn:hover {
   transition: background-color 350ms ease;
-  background-color: #2c2c2c;
+  background-color: #5c5c5c;
   cursor: pointer;
 }
 
@@ -73,12 +73,12 @@ a {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  transition: 80ms ease;
+  transition: 250ms ease;
 }
 
 a:hover{
-  color: #464646;
-  text-shadow: 0px 0px 30px black;
+  color: #ff0000;
+  text-shadow: 0px 0px 30px rgb(255, 0, 0);
   transition: 250ms ease;
   cursor: pointer;
 }

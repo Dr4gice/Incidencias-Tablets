@@ -63,10 +63,11 @@ body {
     align-items: center;
     top: 0;
     left: 0;
-    margin-left: 62%;
+    margin-left: 55%;
 }
 
 .menu-lateral {
+    z-index: 1;
     margin-top: 64px;
     background-color:  rgb(250, 250, 250);
     position: fixed;
@@ -80,6 +81,7 @@ body {
 }
 
 .menu-lateral.active {
+    z-index: 1;
     transform: translateX(0);
 }
 
@@ -104,7 +106,7 @@ body {
 }
 
 .listaMenu .contenidoLista .link {
-    padding: 0 16px;
+    padding: 0 12px;
 }
 
 .userName {
